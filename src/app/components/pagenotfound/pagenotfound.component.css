@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    background-image: url('/assets/Images/servicebg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 150px;
+}
+
+h5 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 30px;
+}
+
+.anim {
+    opacity: 0;
+    transform: translateY(340px);
+    animation: moveup 1s linear forwards;
+}
+.anim1{
+    opacity: 0;
+    transform: translate(-340px);
+    animation: movedown 1s linear forwards;
+}
+@keyframes moveup {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes movedown {
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    h5 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+}

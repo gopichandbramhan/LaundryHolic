@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:host {
+    --themecolor: #30d5c7;
+    --text-gray: #2c3a3a;
+    --background: #f5fffe;
+    --font-color: rgb(0, 0, 0);
+    --back-color: #f9f9f9;
+}
+
+.label {
+    color: var(--themecolor);
+}
+
+.back-button button {
+    border: 0;
+    background: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+.top-section{
+    height: 316px;
+}
+.image img{
+    height: 300px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    -webkit-background-size: cover;
+}
+
+.themecolor {
+    color: var(--themecolor);
+}
+
+.backcolor {
+    background-color: var(--back-color);
+}
+
+.home{
+    border-bottom: 1px solid var(--themecolor);
+}
+.home a:hover{
+    color: rgb(39, 158, 255);
+}
+.agree{
+    background-color: var(--themecolor);
+    color: white;
+    border: none;
+}
+.agree:hover{
+    background-color: white;
+    color: var(--themecolor);
+    border: 1px solid var(--themecolor);
+}
+.terms{
+    color: #7c7c7d;
+}
+.top-content{
+    position: relative;
+    top: -190px;
+    color: var(--font-color);
+}
+.checkbox{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .themecolor {
+        font-size: 12px;
+    }
+
+    .content {
+        width: 80%;
+    }
+
+    .terms {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .themecolor {
+        font-size: 14px;
+    }
+}
+

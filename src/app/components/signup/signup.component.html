@@ -1,0 +1,71 @@
+<div class="main-signup py-4">
+  <div class="input-box text-center">
+    <label for="stateSelect" class="select-signup" style="font-size: 25px;">SignUp For</label>
+    <select type="text" class="select-signup" placeholder="Select city" name="city" id="citySelect" required>
+      <option value="nagpur"><a href="" type="button" (click)="toggleDiv(1)">Customer</a></option>
+      <option value="pune"><a href="" type="button" (click)="toggleDiv(1)">Business Partner </a></option>
+      <option value="mumbai"> <a href="" button type="button" (click)="toggleDiv(3)">Delivery Partner</a></option>
+    </select>
+  </div>
+  <div class="total-body">
+    <div class="container">
+      <form [formGroup]="signUpForm" class="mt-4">
+        <h2 class="style-signup">Customer Form</h2>
+        <div class="content">
+          <div class="input-box">
+            <label for="name">Full Name</label>
+            <input class="px-3 py-3 border-0" type="text"
+              [class.is-invalid]="f['Name'].invalid && f['Name'].touched" placeholder="Full Name"
+              formControlName="Name" required>
+            <p *ngIf="f['Name'].invalid && f['Name'].touched" style=" color:red; padding-left:5px">
+              Full
+              Name is
+              required</p>
+          </div>
+          <div class="input-box">
+            <label for="name">Email</label>
+            <input class="px-3 py-3 border-0" type="email" [class.is-invalid]="f['email'].invalid && f['email'].touched"
+              placeholder=" Your Email Address" formControlName="email" required>
+            <p *ngIf="f['email'].invalid && f['email'].touched" style=" color:red; padding-left:5px">Email is
+              required</p>
+          </div>
+          <div class="input-box">
+            <label for="phone">Phone Number</label>
+            <input class="px-3 py-3 border-0" [class.is-invalid]="f['number'].invalid && f['number'].touched"
+              placeholder=" Mobile Number" formControlName="number" required>
+            <p *ngIf="f['number'].invalid && f['number'].touched" style=" color:red; padding-left:5px">Mobile
+              number is required</p>
+          </div>
+          <div class="input-box">
+            <label for="stateSelect">State</label>
+            <select type="text" placeholder="Select state" name="state" id="stateSelect" formControlName="state"
+              [class.is-invalid]="f['number'].invalid && f['number'].touched" required>
+              <option value="maharastra">Maharastra</option>
+              <option value="delhi">Delhi</option>
+              <option value="gujarat">Gujarat</option>
+            </select>
+            <p *ngIf="f['state'].invalid && f['state'].touched" style=" color:red; padding-left:5px">state is required</p>
+          </div>
+          <div class="input-box">
+            <label for="stateSelect">City</label>
+            <select type="text" placeholder="Select city" name="city" id="citySelect" formControlName="city" [class.is-invalid]="f['city'].invalid && f['city'].touched" required>
+              <option value="nagpur">Nagpur</option>
+              <option value="pune">Pune</option>
+              <option value="mumbai">Mumbai</option>
+            </select>
+            <p *ngIf="f['city'].invalid && f['city'].touched" style=" color:red; padding-left:5px">city is required</p>
+          </div>
+        </div>
+        <div class="alert">
+          <p>By clicking Sign Up,you agree to our <a href="#">Terms,</a><a routerLink="/privacypolicy">Privacy
+              Policy</a> and <a href="#">Cookies policy</a>. you may recieve sms notification from us and can opt out at
+            any time.</p>
+        </div>
+        <div class="button-container">
+          <button type="submit" [disabled]="signUpForm.invalid" class="contact-submit-btn px-5 py-2" (click)="onSignup()">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br>

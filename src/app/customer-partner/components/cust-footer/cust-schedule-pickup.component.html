@@ -1,0 +1,314 @@
+<div class="container main-container m-auto">
+    <div class="row back-container">
+        <div class="col-lg-12 col-sm-12 col-md-12 back-button fs-4">
+            <button><i class="fas fa-angle-left"></i></button>
+            <span class="label">Schedule Pickup</span>
+        </div>
+    </div>
+    <div class="row address-container m-auto">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column">
+            <h6 class="ms-2">Address:</h6>
+            <p class="d-flex justify-content-between align-items-center mt-1 p-2 border">
+                <span>Home 1/2, telephone nagar, near mobile square, Nagpur</span>
+                <a class="text-decoration-none" href="#"><span class="label">Change</span></a>
+            </p>
+        </div>
+    </div>
+
+    <form [formGroup]="schedulePickupForm" (ngSubmit)="handleSubmit()">
+        <div class="row delivery-methods d-flex justify-content-evenly align-items-center mt-3 m-auto">
+            <h6 class="ms-2">Delivery methods</h6>
+            <div class="col-lg-6 col-md-6 col-sm-6 deliverynormal">
+                <span
+                    class="text-decoration-none d-flex flex-column justify-content-center align-items-center delivery-mode1 mt-1 p-3"
+                    (click)=" showActivePopUp()" (click)="handleNormalDeliveryClick($event)"
+                    [class.is-invalid]="f['deliveryMethod'].invalid && f['deliveryMethod'].touched"
+                    formControlName="deliveryMethod">
+                    <span>
+                        <img src="/assets/Images/normaldelivery.png" alt="delivery" class="normal">
+                    </span>
+                    <h6 class="fw-light">Normal</h6>
+                    <span>Delivery in 48 hours</span>
+                    <span>Standard Rates</span>
+                </span>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 deliveryexpress">
+                <button
+                    class="text-decoration-none d-flex flex-column justify-content-center align-items-center delivery-mode2 mt-1 p-3"
+                    (click)="showNormalPopUp()" (click)="handleExpressDeliveryClick($event)">
+                    <span>
+                        <img src="/assets/Images/expressdelivery.png" alt="delivery" class="express">
+                    </span>
+                    <h6 class="fw-light">Express</h6>
+                    <span>Delivery in 28 hours</span>
+                    <span>Standard Rates</span>
+                </button>
+            </div>
+        </div>
+        <p *ngIf="f['deliveryMethod'].invalid && f['deliveryMethod'].touched" style=" color:red; padding-left:5px">
+            Please select Delivery Method</p>
+
+        <div class="row choose-pickup-date mt-3 m-auto">
+            <h6 class="ms-2">Choose Pickup Date</h6>
+            <div class="slider-wrapper">
+                <div class="slider-container d-flex justify-content-evenly align-items-center">
+                    <div class="icon-container">
+                        <div class="icon-inner-container home-main-card p-2">
+                            <a class="a-link-normal text-decoration-none">
+                                <ul class="d-flex justify-content-center list-unstyled">
+                                    {{ currentDate }} <li class="px-2" *ngFor="let month of months"> {{ month }}</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="choose-pickup-date m-auto">
+                <input type="date" [class.is-invalid]="f['date'].invalid && f['date'].touched" formControlName="date">
+                <p *ngIf="f['date'].invalid && f['date'].touched" style=" color:red; padding-left:5px">
+                    Date is mandatory</p>
+            </div>
+            <div class="row choose-time-slot mt-3 m-auto d-flex justify-content-evenly align-items-center">
+                <h6 class="ms-2 mb-2">Choose Time Slot</h6>
+                <div class="col-lg-6 col-md-6 col-sm-6 slots text-center py-2 px-3">
+                    <button class="border text-center">
+                        7am to 10am0
+                    </button>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 slots text-center py-2 px-3">
+                    <button class="border text-center">
+                        10am to 1pm0
+                    </button>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 slots text-center py-2 px-4">
+                    <button class="border text-center">
+                        1pm to 4pm0
+                    </button>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 slots text-center py-2 px-4">
+                    <button class="border text-center">
+                        4pm to 7pm0
+                    </button>
+                </div>
+            </div>
+            <div class="row choose-vendor mt-3 m-auto">
+                <h6 class="ms-2 mb-2">Choose Vendor</h6>
+                <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                    <button class="py-3 rounded m-auto" *ngIf="!showvendorlist" (click)="showvendorlist=true">Select
+                        Vendor</button>
+                </div>
+            </div>
+
+
+            <input placeholder="Enter your name" type="text" [class.is-invalid]="f['date'].invalid && f['date'].touched"
+                formControlName="date">
+            <p *ngIf="f['date'].invalid && f['date'].touched" style=" color:red; padding-left:5px">
+                Date is mandatory</p>
+
+
+
+
+            <!-- START SELECT VENDOR LIST -->
+            <!-- <div class="row " *ngIf="showvendorlist">
+                <div *ngFor="let card of cards; let i = index" (click)="selectCard(i)" [ngClass]="{'hidden': selectedIndex !== null && selectedIndex !== i}">
+        
+                    <a>
+                        <div class="col-lg-6 col-md-12 col-sm-12 border rounded p-2 d-flex justify-content-around align-items-center mb-1"
+                            *ngIf="showvendorlist">
+                            <div class="row d-flex justify-content-center align-items-center shops-list-container">
+                                <div class="col-lg-3 col-md-3 col-sm-3 shop">
+                                    <img [src]="card.img" alt="">
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 shop-info">
+                                    <h6 class="fw-bold">{{card.storename}}</h6>
+                                    <p>{{card.address}}</p>
+                                    <p class="d-flex justify-content-between align-items-center">
+                                        <span class="label">1.51km</span>
+                                        <span>
+                                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                            <span>(4.9)</span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                  </div>
+            </div> -->
+
+            <!-- SELECT VENDOR LIST END -->
+            <div class="row next-btn m-auto my-3">
+                <button class="m-auto py-2">Next</button>
+            </div>
+        </div>
+        <input type="text" placeholder="enter name"> Name
+    </form>
+
+</div>
+
+<!--  View Model -->
+<!-- <div class="modal fade"  [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'" id="exampleModalCenter"
+    tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered m-auto" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Select Vendor</h5>
+                <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+
+                <div class="row " >
+                    <div class="col-lg-12 col-md-12 col-sm-12 border rounded p-2 d-flex justify-content-around align-items-center mb-1"*ngIf="showvendorlist">
+                        <div class="row d-flex justify-content-center align-items-center shops-list-container">
+                            <div class="col-lg-3 col-md-3 col-sm-3 shop">
+                                <img src="/assets/Images/shop.png" alt="">
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 shop-info">
+                                <h6 class="fw-bold">Akshay Store</h6>
+                                <p>21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024</p>
+                                <p class="d-flex justify-content-between align-items-center">
+                                    <span class="label">1.51km</span>
+                                    <span>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <span>(4.9)</span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 border rounded p-2 d-flex justify-content-around align-items-center mb-1">
+                        <div class="row d-flex justify-content-center align-items-center shops-list-container">
+                            <div class="col-lg-3 col-md-3 col-sm-3 shop">
+                                <img src="/assets/Images/shop.png" alt="">
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 shop-info">
+                                <h6 class="fw-bold">Akshay Store</h6>
+                                <p>21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024</p>
+                                <p class="d-flex justify-content-between align-items-center">
+                                    <span class="label">2km</span>
+                                    <span>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <span>(4.9)</span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 border rounded p-2 d-flex justify-content-around align-items-center mb-1">
+                        <div class="row d-flex justify-content-center align-items-center shops-list-container">
+                            <div class="col-lg-3 col-md-3 col-sm-3 shop">
+                                <img src="/assets/Images/shop.png" alt="">
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 shop-info">
+                                <h6 class="fw-bold">Akshay Store</h6>
+                                <p>21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024</p>
+                                <p class="d-flex justify-content-between align-items-center">
+                                    <span class="label">2.51km</span>
+                                    <span>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <span>(4.9)</span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+              
+</div> -->
+
+
+
+
+
+<!-- Schedule pickup coupen code -->
+
+<!-- <div class="container m-auto">
+    <div class="row back-container mb-4">
+        <div class="col-lg-12 col-sm-12 col-md-12 back-button fs-4">
+            <button><i class="fas fa-angle-left"></i></button>
+            <span class="label">Schedule Pickup</span>
+        </div>
+    </div>
+    <h6>Apply Coupon Code</h6>
+    <div class="form-container mt-2 mb-2">
+        <form>
+            <input type="text" name="apply" placeholder="Enter coupon code" />
+            <button>Apply</button>
+        </form>
+    </div>
+    <h6>Redeem</h6>
+    <div class=" wallet-amount d-flex justify-content-between align-items-center mt-1">
+        <div class="check-box d-flex justify-content-between align-items-center">
+            <input type="checkbox" name="amount" />
+            <label for="Amount">Wallet Amount</label>
+        </div>
+        <div class="span-div">
+            <span>₹50</span>
+        </div>
+    </div>
+    <div class=" wallet-amount d-flex justify-content-between align-items-center mt-2 mb-3">
+        <div class="check-box d-flex justify-content-between align-items-center">
+            <input type="checkbox" name="amount" />
+            <label for="Amount">LH Points</label>
+        </div>
+        <div class="span-div">
+            <span>25 points</span>
+        </div>
+    </div>
+    <h6>Order Summery</h6>
+    <div class="order-summery-div mt-1 ">
+        <div class="d-flex justify-content-between   border-bottom pb-1">
+            <p>Items :</p>
+            <span><button class="view-btn ms-lg-3">View Items </button></span>
+        </div>
+
+        <div class="d-flex justify-content-between  border-bottom align-items-center">
+            <p>Items Amount :</p>
+            <p> <span class="text-gray ms-lg-3">(Inclu. GST or TAX)</span>Rs. 000.00</p>
+        </div>
+        <div class="d-flex justify-content-between  border-bottom ">
+            <p>Delivery Charge :</p>
+            <p class="ms-lg-3">Rs. 000.00</p>
+        </div>
+        <div class="d-flex justify-content-between  border-bottom">
+            <p>Discount :</p>
+            <p class="ms-lg-3">Rs. 000.00</p>
+        </div>
+        <div class="d-flex justify-content-between  border-bottom">
+            <p>Wallet Amount :</p>
+            <p class="ms-lg-3">Rs. 000.00</p>
+        </div>
+        <div class="d-flex justify-content-between   border-bottom">
+            <p>LH Points :</p>
+            <p class="ms-lg-3">2.5% </p>
+        </div>
+        <div class="d-flex justify-content-between   border-bottom">
+            <p>Total :</p>
+            <p class="ms-lg-3">Rs. 000.00</p>
+        </div>
+    </div>
+    <div>
+        <button class="Proceed-btn mt-5">Proceed Payment</button>
+    </div>
+</div> -->

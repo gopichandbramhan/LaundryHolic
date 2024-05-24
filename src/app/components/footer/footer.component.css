@@ -1,0 +1,37 @@
+.footer-container {
+    background-color: #30d5c7;
+    color: white;
+}
+
+.footer-container img {
+    height: 40px;
+    margin-top: 10px;
+    width: auto;
+    background-color: white;
+}
+
+.footer-container p {
+    word-spacing: -1x;
+}
+
+.footer-second h3 {
+    color: #293d3d;
+}
+
+.footer-second ul li a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-second ul li a:hover {
+    color: #000000;
+    text-decoration: underline #293d3d;
+    cursor: pointer;
+}
+
+.footer-third p a:hover {
+    color: #293d3d;
+    text-decoration: underline #293d3d;
+    cursor: pointer;
+}

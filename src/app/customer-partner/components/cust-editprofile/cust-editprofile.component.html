@@ -1,0 +1,61 @@
+<div class="container m-auto">
+    <div class="row back-container mb-3">
+        <div class="col-lg-12 col-sm-12 col-md-12 back-button fs-4">
+            <button class="" (click)=" goBack()"><i class="fas fa-angle-left"></i></button>
+            <span class="label"> Edit Profile</span>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg-12 col-md-12 col-sm-12 first d-flex justify-content-center align-items-center flex-column">
+            <img src="assets/Images/profilephoto.jpg" class="img1">
+            <img [src]="imageUrl" (click)="fileInput.click()" class="img2">
+            <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)">
+        </div>
+    </div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="row mt-3">
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column my-2">
+                <label class="fw-bold" for="name">Name</label>
+                <input type="text" id="name" class="py-2 px-3" placeholder="Enter name here">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column my-2">
+                <label class="fw-bold" for="email">Email</label>
+                <input type="email" id="email" class="py-2 px-3" placeholder="Enter email here">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column my-2">
+                <label class="fw-bold" for="phone">Mobile No.</label>
+                <input type="tel" id="phone" class="py-2 px-3" placeholder="Enter contact here">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 my-2 state-city">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column state-col">
+                        <label class="fw-bold" for="state">State</label>
+                        <input type="text" placeholder="Enter here" class="state py-2 px-3">
+                    </div>
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column city-col">
+                        <label class="fw-bold" for="city">City</label>
+                        <input type="text" id="city" placeholder="Enter here" class="city py-2 px-3">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-sm-12 col-md-12 d-flex flex-column my-2">
+                <label class="fw-bold" for="address">Permanent Address</label>
+                <input type="text" id="address" class="py-2 px-3" placeholder="Enter address here">
+            </div>
+            <div class="input-box col-lg-12 col-md-12 d-flex flex-column col-sm-12 my-2">
+                <label class="fw-bold" for="phone">Permanent Address<span
+                        style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" class="py-2 px-3" placeholder="Enter Address" name="storeaddress" id="storeaddress"
+                    formControlName="storeaddress" required>
+                <p *ngIf="isFieldInvalid('storeaddress')" style=" color:red; padding-left:5px">Address is required</p>
+            </div>
+            <div class="row mt-5 mb-2">
+                <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-center align-items-lg-baseline">
+                    <button type="submit" [disabled]="!isFormValid()" class="update-button py-2 px-3">Update Profile</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>

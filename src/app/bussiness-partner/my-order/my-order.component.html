@@ -1,0 +1,742 @@
+<div class="container-fluid main-container">
+    
+  <div class="search-bar ">
+    <form class="d-flex " role="search">
+      <input class="form-control " type="search" placeholder="Search Me" aria-label="Search">
+      <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+    </form>
+  </div>
+
+<div class="row mt-4 orderoptions orderoptions-btn ">
+  <div class="row mt-4 orderoption ">
+    <div class="col-lg-4 col-md-4 col-sm-4 d-flex justify-content-center align-items-center">
+        <button class="d-flex justify-content-center align-items-center order1"
+            [style.background-color]="showPendingOrdersAccordions ? '#30d5c7' : 'initial'"
+            [style.color]="showPendingOrdersAccordions ? 'white' : '#4e5659'"
+            [style.display]="showPendingOrdersAccordions? 'block' : 'initial'"
+            (click)="toggleshowPendingOrdersAccordions()">Pending Orders</button>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4  d-flex justify-content-center align-items-center">
+        <button class="d-flex justify-content-center align-items-center order3"
+            [style.color]="showDeliveredOrdersAccordions ? 'white' : '#4e5659'"
+            [style.background-color]="showDeliveredOrdersAccordions ? '#30d5c7' : 'initial'"
+            [style.display]="showDeliveredOrdersAccordions ? 'block' : 'initial'"
+            (click)="toggleDeliveredOrdersAccordions()">Delivered Orders</button>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4  d-flex justify-content-center align-items-center">
+        <button class="d-flex justify-content-center align-items-center order4"
+            [style.color]="showCancelledOrdersAccordions ? 'white' : '#4e5659'"
+            [style.background-color]="showCancelledOrdersAccordions ? '#30d5c7' : 'initial'"
+            [style.display]="showCancelledOrdersAccordions ? 'block' : 'initial'"
+            (click)="toggleshowCancelledOrdersAccordions()">Cancelled Orders</button>
+    </div>
+</div>
+
+
+<div class="processingdatapanel">
+    <div class="row mt-1 m-auto processing">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 " *ngIf="showPendingOrdersAccordions">
+          <mat-accordion >
+            <mat-expansion-panel >
+              <mat-expansion-panel-header style="height: 110px; padding-right: 20px;">
+                <mat-panel-title>
+  
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="order-details text-left">
+                          <p><span class="order-text">Order ID</span> : 01</p>
+                          <p><span class="order-text">Booking Date</span> : 11 March 2024</p>
+                          <p><span class="order-text">Time Slot</span> : 9am - 11am</p>
+                          <p><span class="order-text">Status</span> :<span style="color: red;"> Pending</span> </p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="prise"><span>&#x20B9;</span>300.50</div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="accordion-body">
+  
+  
+                <div class="customer-details">
+                  <span class="delivery-date-heading">Estimate Delivery Date : 22/04/2024</span>
+                  <div class="customer-text" style="margin-top: 20px;">
+                    <h6>Name : </h6>
+                    <p class="customer-span-text"> Jenny Wilson</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Phone No :</h6>
+                    <p class="customer-span-text"> 1111111111</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Time Slot :</h6>
+                    <p class="customer-span-text"> 11AM - 1PM</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Address :</h6>
+                    <p class="customer-span-text"> Plot no. 25 manewada road, Nagpur</p>
+                  </div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> <span>&#x20B9;</span>300</span></div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> <span>&#x20B9;</span>300</span></div>
+                </div>
+                <div class="customer-payment-mode">
+                  <div class="payment-mode-bill">
+                    <h6>Offer Price</h6>
+                    <p><span>&#x20B9;</span>500</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Total Payment :</h6>
+                    <p><span>&#x20B9;</span>500</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Payment Method :</h6>
+                    <p>COD or Online</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Payment Status :</h6>
+                    <p>Pending</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p>*</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Customer Order Photos :</h6>
+                    <p><a href="">View </a>(When I click on
+                      view button show multiples photos)
+                    </p>
+                  </div>
+  
+  
+                  <div class="payment-mode-bill">
+                    <h6>Remark :</h6>
+                    <p>NA</p>
+                  </div>
+                </div>
+                <div class="modal-btn" (click)=" youClicked()">
+                  <button class="processing-btn"  *ngIf="showDLaundryBtn" 
+                   >Laundry in Process </button>
+                <button class="processing-btn-hide "   
+                   disabled *ngIf="hideLaundryBtn">Laundry is Completed </button>
+              
+                </div>
+              </div>
+  
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 " *ngIf="showPendingOrdersAccordions">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header style="height: 110px; padding-right: 20px;">
+                <mat-panel-title>
+  
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="order-details text-left">
+                          <p><span class="order-text">Order ID</span> : 01</p>
+                          <p><span class="order-text">Booking Date</span> : 11 March 2024</p>
+                          <p><span class="order-text">Time Slot</span> : 9am - 11am</p>
+                          <p><span class="order-text">Status</span> :<span style="color: red;"> Pending</span> </p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="prise"><span>&#x20B9;</span>300.50</div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="accordion-body">
+  
+  
+                <div class="customer-details">
+                  <span class="delivery-date-heading">Estimate Delivery Date : 22/04/2024</span>
+                  <div class="customer-text" style="margin-top: 20px;">
+                    <h6>Name : </h6>
+                    <p class="customer-span-text"> Jenny Wilson</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Phone No :</h6>
+                    <p class="customer-span-text"> 1111111111</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Time Slot :</h6>
+                    <p class="customer-span-text"> 11AM - 1PM</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Address :</h6>
+                    <p class="customer-span-text"> Plot no. 25 manewada road, Nagpur</p>
+                  </div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> <span>&#x20B9;</span>300</span></div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> <span>&#x20B9;</span>300</span></div>
+                </div>
+                <div class="customer-payment-mode">
+                  <div class="payment-mode-bill">
+                    <h6>Offer Price</h6>
+                    <p><span>&#x20B9;</span>500</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Total Payment :</h6>
+                    <p><span>&#x20B9;</span>500</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Payment Method :</h6>
+                    <p>COD or Online</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Payment Status :</h6>
+                    <p>Pending</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p>*</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Customer Order Photos :</h6>
+                    <p><a href="">View </a>(When I click on
+                      view button show multiples photos)
+                    </p>
+                  </div>
+  
+  
+                  <div class="payment-mode-bill">
+                    <h6>Remark :</h6>
+                    <p>NA</p>
+                  </div>
+                </div>
+                <div class="modal-btn" (click)=" youClicked()">
+                  <button class="processing-btn"  *ngIf="showDLaundryBtn" 
+                   >Laundry in Process </button>
+                <button class="processing-btn-hide "   
+                   disabled *ngIf="hideLaundryBtn">Laundry is Completed </button>
+              
+                </div>
+               </div>
+  
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+    </div>
+</div>
+
+<div class="delivereddatapanel">
+    <div class="row mt-1 m-auto delivered">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3" *ngIf="showDeliveredOrdersAccordions">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header style="height: 110px; padding-right: 20px;">
+                <mat-panel-title>
+  
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="order-details text-left">
+                          <p><span class="order-text">Order ID</span> : 111</p>
+                          <p><span class="order-text">Booking Date</span> : 11 March 2024</p>
+                          <p><span class="order-text">Time Slot</span> : 9am - 11am</p>
+                          <p><span class="order-text">Delivery Date</span> : 22/04/2024</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="prise"><span>&#x20B9;</span>300.50</div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="accordion-body">
+  
+                <div class="customer-details">
+                  <div class="customer-text">
+                    <h6>Name : </h6>
+                    <p class="customer-span-text"> Jenny Wilson</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Phone No :</h6>
+                    <p class="customer-span-text"> 1111111111</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Time Slot :</h6>
+                    <p class="customer-span-text"> 11AM - 1PM</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Adress :</h6>
+                    <p class="customer-span-text"> Plot no. 25 manewada road, Nagpur</p>
+                  </div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> $300</span></div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> <span>&#x20B9;</span>300</span></div>
+                </div>
+                <div class="customer-payment-mode">
+                  <div class="payment-mode-bill">
+                    <h6>Payment Mode</h6>
+                    <p>COD</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Service MRP :</h6>
+                    <p><span>&#x20B9;</span>600</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Amount :</h6>
+                    <p><span>&#x20B9;</span>600</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>GST(18%) :</h6>
+                    <p>Total Payment</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Vendor Commission :</h6>
+                    <p><span>&#x20B9;</span>50</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p><span>&#x20B9;</span>50</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p>6768907876755</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Update Date :</h6>
+                    <p>28/03/2024</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Payment Status :</h6>
+                    <p>Pending</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Remark :</h6>
+                    <p>NA</p>
+                  </div>
+                </div>
+                <div class="modal-btn" (click)=" youClicked()">
+                  <button class="processing-btn"  *ngIf="showDLaundryBtn" 
+                   >Laundry in Process </button>
+                <button class="processing-btn-hide "   
+                   disabled *ngIf="hideLaundryBtn">Laundry is Completed </button>
+              
+                </div>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 " *ngIf="showDeliveredOrdersAccordions">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header style="height: 110px; padding-right: 20px;">
+                <mat-panel-title>
+  
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="order-details text-left">
+                          <p><span class="order-text">Order ID</span> : 111</p>
+                          <p><span class="order-text">Booking Date</span> : 11 March 2024</p>
+                          <p><span class="order-text">Time Slot</span> : 9am - 11am</p>
+                          <p><span class="order-text">Delivery Date</span> : 22/04/2024</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="prise"><span>&#x20B9;</span>300.50</div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="accordion-body">
+  
+                <div class="customer-details">
+                  <div class="customer-text">
+                    <h6>Name : </h6>
+                    <p class="customer-span-text"> Jenny Wilson</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Phone No :</h6>
+                    <p class="customer-span-text"> 1111111111</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Time Slot :</h6>
+                    <p class="customer-span-text"> 11AM - 1PM</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Adress :</h6>
+                    <p class="customer-span-text"> Plot no. 25 manewada road, Nagpur</p>
+                  </div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> $300</span></div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> <span>&#x20B9;</span>300</span></div>
+                </div>
+                <div class="customer-payment-mode">
+                  <div class="payment-mode-bill">
+                    <h6>Payment Mode</h6>
+                    <p>COD</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Service MRP :</h6>
+                    <p><span>&#x20B9;</span>600</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Amount :</h6>
+                    <p><span>&#x20B9;</span>600</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>GST(18%) :</h6>
+                    <p>Total Payment</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Vendor Commission :</h6>
+                    <p><span>&#x20B9;</span>50</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p><span>&#x20B9;</span>50</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p>6768907876755</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Update Date :</h6>
+                    <p>28/03/2024</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Payment Status :</h6>
+                    <p>Pending</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Remark :</h6>
+                    <p>NA</p>
+                  </div>
+                </div>
+                <div class="modal-btn" (click)=" youClicked()">
+                  <button class="processing-btn"  *ngIf="showDLaundryBtn" 
+                   >Laundry in Process </button>
+                <button class="processing-btn-hide "   
+                   disabled *ngIf="hideLaundryBtn">Laundry is Completed </button>
+              
+                </div>
+                </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+    </div>
+</div>
+
+<div class="rejecteddatapanel">
+    <div class="row mt-1 m-auto rejected">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3" *ngIf="showCancelledOrdersAccordions">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header style="height: 110px; padding-right: 20px;">
+                <mat-panel-title>
+  
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="order-details text-left">
+                          <p><span class="order-text">Order ID</span> : 111</p>
+                          <p><span class="order-text">Booking Date</span> : 11 March 2024</p>
+                          <p><span class="order-text">Time Slot</span> : 9am - 11am</p>
+                          <p style="color: red;"><span class="order-text">Status</span> <span style="color: red;">
+                              Canceled</span></p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="prise"><span>&#x20B9;</span>300.50</div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="accordion-body">
+                <h6 class="delivery-date-heading">Order Canceled by delivery person</h6>
+                <div class="customer-details">
+                  <div class="customer-text">
+                    <h6>Name : </h6>
+                    <p class="customer-span-text"> Jenny Wilson</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Phone No :</h6>
+                    <p class="customer-span-text"> 1111111111</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Time Slot :</h6>
+                    <p class="customer-span-text"> 11AM - 1PM</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Adress :</h6>
+                    <p class="customer-span-text"> Plot no. 25 manewada road, Nagpur</p>
+                  </div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"><span>&#x20B9;</span>300</span></div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> <span>&#x20B9;</span>300</span></div>
+                </div>
+  
+  
+                <div class="customer-payment-mode">
+                  <div class="payment-mode-bill">
+                    <h6>Payment Mode</h6>
+                    <p>COD</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Service MRP :</h6>
+                    <p><span>&#x20B9;</span>600</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Amount :</h6>
+                    <p><span>&#x20B9;</span>600</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>GST(18%) :</h6>
+                    <p>Total Payment</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Vendor Commission :</h6>
+                    <p><span>&#x20B9;</span>50</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p><span>&#x20B9;</span>50</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p>6768907876755</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Update Date :</h6>
+                    <p>28/03/2024</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Payment Status :</h6>
+                    <p>Pending</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Remark :</h6>
+                    <p>NA</p>
+                  </div>
+                </div>
+               
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 " *ngIf="showCancelledOrdersAccordions">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header style="height: 110px; padding-right: 20px;">
+                <mat-panel-title>
+  
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="order-details text-left">
+                          <p><span class="order-text">Order ID</span> : 111</p>
+                          <p><span class="order-text">Booking Date</span> : 11 March 2024</p>
+                          <p><span class="order-text">Time Slot</span> : 9am - 11am</p>
+                          <p style="color: red;"><span class="order-text">Status</span> <span style="color: red;">
+                              Canceled</span></p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-sm-6">
+                        <div class="prise"><span>&#x20B9;</span>300.50</div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="accordion-body">
+                <h6 class="delivery-date-heading">Order Canceled by delivery person</h6>
+                <div class="customer-details">
+                  <div class="customer-text">
+                    <h6>Name : </h6>
+                    <p class="customer-span-text"> Jenny Wilson</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Phone No :</h6>
+                    <p class="customer-span-text"> 1111111111</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Time Slot :</h6>
+                    <p class="customer-span-text"> 11AM - 1PM</p>
+                  </div>
+                  <div class="customer-text">
+                    <h6>Adress :</h6>
+                    <p class="customer-span-text"> Plot no. 25 manewada road, Nagpur</p>
+                  </div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"><span>&#x20B9;</span>300</span></div>
+                </div>
+                <div class="customer-card-order">
+                  <div>
+                    <img src="/assets/Images/blazer.png" alt="order-image" width="50px" height="50px" />
+                  </div>
+                  <div>
+                    <h6> Blazer</h6>
+                    <p>Quantity : 1</p>
+                    <p>Categories : Dry Cleaning</p>
+                  </div>
+                  <div><span class="card-prise"> <span>&#x20B9;</span>300</span></div>
+                </div>
+  
+  
+                <div class="customer-payment-mode">
+                  <div class="payment-mode-bill">
+                    <h6>Payment Mode</h6>
+                    <p>COD</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Service MRP :</h6>
+                    <p><span>&#x20B9;</span>600</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Amount :</h6>
+                    <p><span>&#x20B9;</span>600</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>GST(18%) :</h6>
+                    <p>Total Payment</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Vendor Commission :</h6>
+                    <p><span>&#x20B9;</span>50</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p><span>&#x20B9;</span>50</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Transaction Number :</h6>
+                    <p>6768907876755</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Update Date :</h6>
+                    <p>28/03/2024</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Payment Status :</h6>
+                    <p>Pending</p>
+                  </div>
+                  <div class="payment-mode-bill">
+                    <h6>Remark :</h6>
+                    <p>NA</p>
+                  </div>
+                </div>
+                
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+    </div>
+</div>
+</div>

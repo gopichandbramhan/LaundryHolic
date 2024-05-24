@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:host{
+    --themecolor: #30d5c7;
+    --white-text: rgb(255, 255, 255);
+    --bg-color: #f2f3f3;
+    --text-gray: #4e5659;
+}
+.labels{
+    color: var(--themecolor);
+}
+
+.first .back-arrow{
+    /* cursor: pointer; */
+    width: 30px;
+    height: 30px;
+    background: var(--bg-color);
+    border-radius: 50px;
+    border: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+.second label, .third label, .fourth label{
+    color: var(--text-gray);
+    font-size: 20px;
+    font-weight: bolder;
+}
+.second input, .second select, .third input, .fourth input{
+    border: 2px solid var(--themecolor);
+    border-radius: 8px;
+}
+.third input{
+    width: 100%;
+}
+
+.fifth button{
+    border-radius: 50px;
+    background-color: var(--themecolor);
+    color: var(--white-text);
+    border: 1px solid var(--themecolor);
+    font-size: 18px;
+}
+.fifth button:hover{
+    background-color: var(--white-text);
+    color: var(--themecolor);
+}

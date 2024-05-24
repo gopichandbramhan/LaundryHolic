@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:host{
+    --themecolor: #30d5c7;
+    --white-text: rgb(255, 255, 255);
+    --text-gray: #4e5659;
+    --bg-color: #f2f2f2;
+}
+.labels{
+    color: var(--themecolor);
+}
+.backcolor{
+    background-color: var(--bg-color);
+}
+.icon-left{
+    width: 40px;
+    height: 35px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--themecolor);
+    background-color: #dbfcf6;
+}
+.first input{
+    width: 100%;
+    border: 1px solid var(--themecolor);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    box-shadow: 1px 1px 5px gray;
+}
+.first .searchicon{
+    border: 1px solid var(--themecolor);
+    height: 42px;
+    width: 44px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: var(--themecolor);
+    color: var(--white-text);
+    box-shadow: 2px 2px 5px gray;
+}
+.first .searchicon:hover{
+    color: var(--themecolor);
+    background-color: var(--white-text);
+    cursor: pointer;
+}
+
+.second h3{
+    color: var(--white-text);
+    background-color: var(--themecolor);
+    border-radius: 3px;
+}
+
+.third button{
+    width: 330px;
+    color: var(--themecolor);
+    border: none;
+    background: none;
+}
+.third button:hover{
+    background-color: #dbfcf6;
+}
+
+
+.fourth h4{
+    color: white;
+    background-color: var(--themecolor);
+}
+
+.fifth{
+    border-top: 3px solid var(--text-gray);
+}
+
+.card1{
+    width: 100%;
+    border: 1px solid var(--themecolor);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px var(--text-gray);
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .second h3, .fourth h4, .fourth h5, .sixth h5{
+        font-size: small;
+    }
+    .third button{
+        width: 100%;
+        font-size: small;
+    }
+    .card1{
+        margin-bottom: 10px;
+    }
+    .fourth p{
+        font-size: 13px;
+    }
+    .sixth p{
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .third button{
+        width: 100%;
+    }
+    .card1{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,1142 @@
+<div class="container-fluid">
+    <div class="row searchbar mt-3 mx-2">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+            <input type="search" placeholder="Search here" class="px-3 py-3"><i class="fa-solid fa-magnifying-glass "></i>
+        </div>
+    </div>
+    <div class="row mt-4 orderoptions m-auto">
+        <div class="col-lg-3 col-md-3 col-sm-3 d-flex justify-content-center align-items-center">
+            <button class="d-flex justify-content-center align-items-center order1"
+                [style.background-color]="showAcceptedOrdersAccordions ? '#00aa85' : 'initial'"
+                [style.color]="showAcceptedOrdersAccordions ? 'white' : '#4e5659'"
+                [style.display]="showAcceptedOrdersAccordions? 'block' : 'initial'"
+                (click)="toggleAcceptedOrdersAccordions()">Accepted
+                Orders</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3  d-flex justify-content-center align-items-center">
+            <button class="d-flex justify-content-center align-items-center order2"
+                [style.background-color]="showProcessingOrdersAccordions ? '#00aa85' : 'initial'"
+                [style.color]="showProcessingOrdersAccordions ? 'white' : '#4e5659'"
+                [style.display]="showProcessingOrdersAccordions? 'block' : 'initial'"
+                (click)="toggleProcessingOrdersAccordions()">Processing Orders</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3  d-flex justify-content-center align-items-center">
+            <button class="d-flex justify-content-center align-items-center order3"
+                [style.color]="showDeliveredOrdersAccordions ? 'white' : '#4e5659'"
+                [style.background-color]="showDeliveredOrdersAccordions ? '#00aa85' : 'initial'"
+                [style.display]="showDeliveredOrdersAccordions ? 'block' : 'initial'"
+                (click)="toggleDeliveredOrdersAccordions()">Delivered Orders</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3  d-flex justify-content-center align-items-center">
+            <button class="d-flex justify-content-center align-items-center order4"
+                [style.color]="showRejectedOrdersAccordions ? 'white' : '#4e5659'"
+                [style.background-color]="showRejectedOrdersAccordions ? '#00aa85' : 'initial'"
+                [style.display]="showRejectedOrdersAccordions ? 'block' : 'initial'"
+                (click)="toggleRejectedOrdersAccordions()">Rejected Orders</button>
+        </div>
+    </div>
+    <div class="accepteddatapanel ">
+        <div class="row mt-1 m-auto accepted">
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3" *ngIf="showAcceptedOrdersAccordions">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header style="height: 160px;" class="px-3 py-3">
+                            <mat-panel-title>
+                                <div class="container text-center">
+                                    <div class="row d-flex justify-content-around align-items-center">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 dropdown1">
+                                            <div class="order-details text-left">
+                                                <p><span class="labels">Order ID</span> : 001</p>
+                                                <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                                <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                                <p><span class="labels">Status</span> : <span
+                                                        class="text-warning">Accepted</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 dropdown1">
+                                            <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                                600</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-body d-flex flex-column acceptedaccordianbody">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Estimeted Delivery Date</span> : <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Cust. Name</span> : <span>Akash</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Contact No.</span> : <span class="contact">7020007820 <i
+                                                class="fa-solid fa-phone"></i></span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Laundry Store Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Offer Price</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Total Payment</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Method</span> : <span>COD or Online</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 d-flex w-100">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Status</span> : <span class="text-warning labels">(Pending)</span> or <span
+                                            class="text-success labels">(Completed)</span><span
+                                            class="text-danger labels">(Canceled)</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p><span class="labels">Transaction No.</span> : <span>------------</span></p>
+                                </div>
+                            </div>
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3" *ngIf="showAcceptedOrdersAccordions">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header style="height: 160px;" class="px-3 py-3">
+                            <mat-panel-title>
+                                <div class="container text-center">
+                                    <div class="row d-flex justify-content-around align-items-center">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 dropdown1">
+                                            <div class="order-details text-left">
+                                                <p><span class="labels">Order ID</span> : 001</p>
+                                                <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                                <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                                <p><span class="labels">Status</span> : <span
+                                                        class="text-warning">Accepted</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 dropdown1">
+                                            <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                                600</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-body d-flex flex-column acceptedaccordianbody">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Estimeted Delivery Date</span> : <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Cust. Name</span> : <span>Akash</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Contact No.</span> : <span class="contact">7020007820 <i
+                                                class="fa-solid fa-phone"></i></span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Laundry Store Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Offer Price</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Total Payment</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Method</span> : <span>COD or Online</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 d-flex w-100">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Status</span> : <span class="text-warning labels">(Pending)</span> or <span
+                                            class="text-success labels">(Completed)</span><span
+                                            class="text-danger labels">(Canceled)</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p><span class="labels">Transaction No.</span> : <span>------------</span></p>
+                                </div>
+                            </div>
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+
+    <div class="processingdatapanel">
+        <div class="row mt-1 m-auto processing">
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3" *ngIf="showProcessingOrdersAccordions">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header style="height: 160px;" class="px-3 py-3">
+                            <mat-panel-title>
+                                <div class="container text-center">
+                                    <div class="row d-flex justify-content-around align-items-center">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 dropdown1">
+                                            <div class="order-details text-left">
+                                                <p><span class="labels">Order ID</span> : 001</p>
+                                                <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                                <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                                <p><span class="labels">Status</span> : <span
+                                                        class="text-primary">Laundry
+                                                        in Process</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 dropdown1">
+                                            <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                                600</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-body d-flex flex-column processingaccordianbody">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Estimeted Delivery Date</span> : <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Cust. Name</span> : <span>Akash</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Contact No.</span> : <span class="contact">7020007820 <i
+                                                class="fa-solid fa-phone"></i></span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Laundry Store Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Offer Price</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Total Payment</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Method</span> : <span>COD or Online</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 d-flex w-100">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Status</span> : <span class="text-warning labels">(Pending)</span> or <span
+                                            class="text-success labels">(Completed)</span><span
+                                            class="text-danger labels">(Canceled)</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p><span class="labels">Transaction No.</span> : <span>------------</span></p>
+                                </div>
+                            </div>
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3 " *ngIf="showProcessingOrdersAccordions">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header style="height: 160px;">
+                            <mat-panel-title>
+
+                                <div class="container text-center">
+                                    <div class="row d-flex justify-content-around align-items-center">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 dropdown1">
+                                            <div class="order-details text-left">
+                                                <p><span class="labels">Order ID</span> : 002</p>
+                                                <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                                <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                                <p><span class="labels">Status</span> : <span
+                                                        class="text-primary">Laundry in Process</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 dropdown1">
+                                            <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                                600</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-body d-flex flex-column processingaccordianbody">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Estimeted Delivery Date</span> : <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Cust. Name</span> : <span>Akash</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Contact No.</span> : <span class="contact">7020007820 <i
+                                                class="fa-solid fa-phone"></i></span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Laundry Store Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Offer Price</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Total Payment</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Method</span> : <span>COD or Online</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 d-flex w-100">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Status</span> : <span class="text-warning labels">(Pending)</span> or <span
+                                            class="text-success labels">(Completed)</span><span
+                                            class="text-danger labels">(Canceled)</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p><span class="labels">Transaction No.</span> : <span>------------</span></p>
+                                </div>
+                            </div>
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+
+    <div class="delivereddatapanel">
+        <div class="row mt-1 m-auto delivered">
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3" *ngIf="showDeliveredOrdersAccordions">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header style="height: 160px;" class="px-3 py-3">
+                            <mat-panel-title>
+                                <div class="container text-center">
+                                    <div class="row d-flex justify-content-around align-items-center">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 dropdown1">
+                                            <div class="order-details text-left">
+                                                <p><span class="labels">Order ID</span> : 001</p>
+                                                <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                                <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                                <p><span class="labels">Delivery Date </span> : <span>22/04/2024</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 dropdown1">
+                                            <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                                600</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-body d-flex flex-column deliveredaccordianbody">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Estimeted Delivery Date</span> : <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Cust. Name</span> : <span>Akash</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Contact No.</span> : <span class="contact">7020007820 <i
+                                                class="fa-solid fa-phone"></i></span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Laundry Store Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Offer Price</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Total Payment</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Method</span> : <span>COD or Online</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 d-flex w-100">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Status</span> : <span class="text-warning labels">(Pending)</span> or <span
+                                            class="text-success labels">(Completed)</span><span
+                                            class="text-danger labels">(Canceled)</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p><span class="labels">Transaction No.</span> : <span>------------</span></p>
+                                </div>
+                            </div>
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3 " *ngIf="showDeliveredOrdersAccordions">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header style="height: 160px;">
+                            <mat-panel-title>
+
+                                <div class="container text-center">
+                                    <div class="row d-flex justify-content-around align-items-center">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 dropdown1">
+                                            <div class="order-details text-left">
+                                                <p><span class="labels">Order ID</span> : 002</p>
+                                                <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                                <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                                <p><span class="labels">Delivery Date </span> : <span>22/04/2024</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 dropdown1">
+                                            <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                                600</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-body d-flex flex-column deliveredaccordianbody">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Estimeted Delivery Date</span> : <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Cust. Name</span> : <span>Akash</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Contact No.</span> : <span class="contact">7020007820 <i
+                                                class="fa-solid fa-phone"></i></span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Laundry Store Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Offer Price</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Total Payment</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Method</span> : <span>COD or Online</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 d-flex w-100">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Status</span> : <span class="text-warning labels">(Pending)</span> or <span
+                                            class="text-success labels">(Completed)</span><span
+                                            class="text-danger labels">(Canceled)</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p><span class="labels">Transaction No.</span> : <span>------------</span></p>
+                                </div>
+                            </div>
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+
+    <div class="rejecteddatapanel">
+        <div class="row mt-1 m-auto rejected">
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3" *ngIf="showRejectedOrdersAccordions">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header style="height: 160px;" class="px-3 py-3">
+                            <mat-panel-title>
+                                <div class="container text-center">
+                                    <div class="row d-flex justify-content-around align-items-center">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 dropdown1">
+                                            <div class="order-details text-left">
+                                                <p><span class="labels">Order ID</span> : 001</p>
+                                                <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                                <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                                <p><span class="labels">Status</span> : <span
+                                                        class="text-danger">Rejected</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 dropdown1">
+                                            <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                                600</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-body d-flex flex-column rejectedaccordianbody">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5 class="pt-3 border-black"><span class="labels">Estimeted Delivery Date</span> :
+                                        <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Cust. Name</span> : <span>Akash</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Contact No.</span> : <span class="contact">7020007820 <i
+                                                class="fa-solid fa-phone"></i></span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Laundry Store Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Offer Price</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Total Payment</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Method</span> : <span>COD or Online</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 d-flex w-100">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Status</span> : <span class="text-warning labels">(Pending)</span> or <span
+                                            class="text-success labels">(Completed)</span><span
+                                            class="text-danger labels">(Canceled)</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p><span class="labels">Transaction No.</span> : <span>------------</span></p>
+                                </div>
+                            </div>
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3 " *ngIf="showRejectedOrdersAccordions">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header style="height: 160px;">
+                            <mat-panel-title>
+
+                                <div class="container text-center">
+                                    <div class="row d-flex justify-content-around align-items-center">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 dropdown1">
+                                            <div class="order-details text-left">
+                                                <p><span class="labels">Order ID</span> : 002</p>
+                                                <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                                <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                                <p><span class="labels">Status</span> : <span
+                                                        class="text-danger">Rejected</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 dropdown1">
+                                            <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                                600</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-body d-flex flex-column rejectedaccordianbody">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Estimeted Delivery Date</span> : <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Cust. Name</span> : <span>Akash</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Contact No.</span> : <span class="contact">7020007820 <i
+                                                class="fa-solid fa-phone"></i></span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-start align-items-start">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Laundry Store Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span><button class="getdirection">Get
+                                                    Direction</button></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item2">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item3">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Offer Price</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p><span class="labels">Total Payment</span> : <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Method</span> : <span>COD or Online</span></p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 d-flex w-100">
+                                    <p class="d-flex justify-content-start align-items-center"><span
+                                            class="labels">Payment
+                                            Status</span> : <span class="text-warning labels">(Pending)</span> or <span
+                                            class="text-success labels">(Completed)</span><span
+                                            class="text-danger labels">(Canceled)</span></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p><span class="labels">Transaction No.</span> : <span>------------</span></p>
+                                </div>
+                            </div>
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+</div>

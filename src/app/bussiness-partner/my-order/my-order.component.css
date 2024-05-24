@@ -1,0 +1,464 @@
+.traceorder button,
+.getdirection {
+  margin-top: 10px;
+  width: 80%;
+  background-color: var(--themecolor);
+  border: 2px solid var(--themecolor);
+  border-radius: 5px;
+}
+
+.accepted img,
+.processing img,
+.delivered img,
+.rejected img {
+  height: 98px;
+  border-radius: 8px;
+}
+
+.mat-expansion-panel {
+  width: 96%;
+  margin: auto;
+}
+
+
+
+.mat-expansion-panel-header {
+  padding: 0px;
+}
+
+.order-details {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.order-text {
+  color: #30d5c7;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700px;
+}
+
+.delivery-date-heading {
+  color: white;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700px;
+  background-color: #30d5c7;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.customer-span-text {
+  margin-left: 10px;
+}
+
+.customer-details {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.customer-text h6 {
+  color: #30d5c7;
+}
+
+.order-details p {
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.prise {
+  margin-right: -170px;
+  color: #30d5c7;
+}
+
+.pending-heading {
+  text-align: left;
+  background-color: #30d5c7;
+  padding: 5px;
+}
+
+.customer-details .customer-text {
+  display: flex;
+
+}
+
+.search-btn {
+  width: 100px;
+}
+
+.customer-span-text {
+  text-align: right;
+}
+
+.accordion-body .customer-card-order {
+  border-radius: 1px solid green;
+}
+
+.accordion-body .customer-card {
+  display: flex;
+  justify-content: left;
+}
+
+.customer-card-order {
+  border: 1px solid #30d5c7;
+  display: flex;
+  justify-content: start;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 0 20px 0 20px;
+}
+
+.customer-card-order img {
+  margin-right: 20px;
+}
+
+.card-prise {
+  color: #30d5c7;
+  padding-left: 50px;
+}
+
+.payment-mode-bill {
+  display: flex;
+
+}
+
+.modal-body {
+  height: 100px;
+  text-align: center;
+}
+
+.modal-btn .processing-btn {
+  width: 100%;
+  background-color: #EEB115;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin-top: 10px;
+}
+
+.modal-btn .processing-btn-hide {
+  width: 100%;
+  background-color: #30d5c7;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin-top: 10px;
+}
+
+.main-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.search-bar {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.pages-button {
+  margin: auto;
+
+}
+
+.order-btn {
+  background-color: #30d5c7;
+  color: white;
+  border-style: none;
+  height: 40px;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 10px;
+
+
+}
+
+.yes-btn {
+  background-color: #30d5c7;
+  width: 70px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.no-btn {
+  border: 1px solid #30d5c7;
+  background-color: white;
+  color: rgb(21, 21, 21);
+  width: 70px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.payment-mode-bill h6 {
+  color: #30d5c7;
+  margin-right: 10px;
+}
+
+.modal-dialog {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.modal-body {
+  margin-top: 20px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+:host {
+  --themecolor: #30d5c7;
+  --white-text: rgb(255, 255, 255);
+  --text-gray: #4e5659;
+  --bg-color: #dcdcdc;
+}
+
+.labels {
+  color: var(--themecolor);
+}
+
+
+.orderoptions {
+  width: 100%;
+}
+
+.orderoptions button {
+  width: 100%;
+  padding: 30px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  background: none;
+  box-shadow: 2px 2px 5px rgb(164, 164, 164);
+  border: 1px solid var(--themecolor);
+  border-right: 3px solid var(--themecolor);
+  border-bottom: 3px solid var(--themecolor);
+  margin: 2px;
+  color: var(--text-gray);
+}
+
+.orderoptions button:active {
+  background-color: var(--themecolor);
+}
+
+.accepted {
+  width: 100%;
+}
+
+.acceptedaccordianbody,
+.processingaccordianbody,
+.deliveredaccordianbody,
+.rejectedaccordianbody {
+  border-top: 2.5px solid var(--text-gray);
+}
+
+
+.accepted img,
+.processing img,
+.delivered img,
+.rejected img {
+  height: 98px;
+  border-radius: 8px;
+}
+
+.contact {
+  color: white;
+  background-color: var(--themecolor);
+  padding: 5px 6px;
+  border-radius: 50px;
+}
+
+@media screen and (max-width:375px){
+  .orderoptions button {
+    font-size: 13.5px;
+  }
+
+  .orderoptions .order1 {
+    margin-left: -267px;
+    width: 24%;
+  }
+
+  .orderoptions .order3 {
+    width: 24%;
+    margin-top: -106px;
+    margin-left: 114px;
+  }
+
+  .orderoptions .order4 {
+    width: 24%;
+    margin-top: -106px;
+    margin-left: 292px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .orderoptions button {
+    font-size: 13.5px;
+  }
+
+  .orderoptions .order1 {
+    margin-left: -313px;
+    width: 24%;
+  }
+
+  .orderoptions .order3 {
+    width: 24%;
+    margin-top: -106px;
+    margin-left: 110px;
+  }
+
+  .orderoptions .order4 {
+    width: 24%;
+    margin-top: -106px;
+    margin-left: 320px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .item1 {
+    width: fit-content;
+    margin-right: 20px;
+  }
+
+  .item2 {
+    width: fit-content;
+  }
+
+  .item3 {
+    width: fit-content;
+  }
+
+  .dropdown1 {
+    width: fit-content;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .searchbar input {
+    width: 100%;
+  }
+
+  .orderoptions {
+    display: flex;
+  }
+
+  .orderoptions button {
+    font-size: 10px;
+  }
+
+  .orderoptions .order1 {
+    width: 33%;
+    margin-left: -160px;
+    margin-right: 55px;
+
+  }
+
+  .orderoptions .order3 {
+    width: 33%;
+
+    margin-left: 30px;
+    margin-top: -106px;
+    margin-right: 30px;
+
+  }
+
+  .orderoptions .order4 {
+    width: 33%;
+    margin-top: -106px;
+    margin-left: 210px;
+
+  }
+}
+
+@media screen and (min-width:375px) and (max-width:376px) {
+  .orderoptions button {
+    font-size: 13.5px;
+  }
+
+  .orderoptions .order1 {
+    width: 31%;
+    margin-left: -185px;
+
+  }
+
+  .orderoptions .order3 {
+    width: 33%;
+    margin-top: -105px;
+    margin-left: 35px;
+  }
+
+  .orderoptions .order4 {
+    width: 33%;
+    margin-top: -106px;
+    margin-left: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .orderoptions button {
+    font-size: 13.5px;
+  }
+
+  .main-container {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width:426px) {
+  .orderoptions button {
+    font-size: 13.5px;
+  }
+
+  .orderoptions .order1 {
+    margin-left: -249px;
+    width: 33%;
+  }
+
+  .orderoptions .order3 {
+    width: 33%;
+    margin-top: -85px;
+    margin-left: 18px;
+  }
+
+  .orderoptions .order4 {
+    width: 33%;
+    margin-top: -86px;
+    margin-left: 280px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .item1 {
+    width: fit-content;
+    margin-right: 20px;
+  }
+
+  .item2 {
+    width: fit-content;
+  }
+
+  .item3 {
+    width: fit-content;
+  }
+
+  .dropdown1 {
+    width: fit-content;
+  }
+
+  .orderoption {
+    width: 98%;
+    margin: auto;
+  }
+
+  .main-container {
+    margin-left: 0px;
+  }
+}

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+    <h2 class="set-image"><a class="navbar-brand logo" href="#"><img class="img-responsive image-style-logo"
+          src="assets/Images/laundry.png"></a></h2>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Loundry">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="Loundry">
+      <ul class="navbar-nav ms-auto nav-style-all">
+        <li class="nav-item hove-list-all">
+          <a class="nav-link" routerLink="customer-home">HOME</a>
+        </li>
+        <li class="nav-item hove-list-all">
+          <a class="nav-link" routerLink="services">SERVICES</a>
+        </li>
+        <li class="nav-item hove-list-all">
+          <a class="nav-link" routerLink="myrewards">REWARDS</a>
+        </li>
+        <li class="nav-item hove-list-all">
+          <a class="nav-link" routerLink="myorder">ORDER</a>
+        </li>
+        <li class="nav-item hove-list-all">
+          <a class="nav-link" routerLink="nearbystore">NEARBY STORE</a>
+        </li>
+        <li class="nav-item hove-list-all">
+          <a class="nav-link" routerLink="myaccount">ACCOUNT</a>
+        </li>
+        <li class="nav-item hove-list-all">
+          <a class="nav-link" routerLink="">LOGOUT</a>
+        </li>
+        <li class="nav-item hove-list-all">
+          <button routerLink="/customer/addtocart" class="btn px-1 py-1"><i class="fas fa-cart-plus"></i>
+            <span class="badge bg-danger">{{itemCount}}</span></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<!-- <app-cust-footer></app-cust-footer> -->

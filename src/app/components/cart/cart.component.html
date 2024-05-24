@@ -1,0 +1,58 @@
+    <ng-container *ngIf="products.length !=0">
+        <div class="container">
+            <div class="card-table">
+                <div class="card-product">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">Service Name</th>
+                            <th scope="col">Service Image</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let serviceall of products; let i=index">
+                            <!-- <th scope="row">3</th> -->
+                            <td>{{i+1}}</td>
+                            <td>{{serviceall.title}}</td>
+                            <td><img style="width:120px" src="{{serviceall.image}}"></td>
+                            <td style="width: 25%;">{{serviceall.description}}</td>
+                            <td style="width: 12%;">{{serviceall.price}}</td>
+                            <td style="width: 12%;">{{serviceall.quantity}}</td>
+                            <td style="width: 12%;">{{serviceall.total}}</td>
+                            <td><button  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+                          </tr>
+                          <tr>
+                            <td colspan="4"></td>
+                            <td><button  class="btn btn-danger">Empty Cart</button></td>
+                            <td><button routerLink="/drycleaning" class="btn btn-primary">Shop More</button></td>
+                            <td><button class="btn btn-success">Checkout</button></td>
+                            <td><strong>Grand Total:<span>&#x20B9;</span> {{grandTotal}}</strong></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    
+    
+    <ng-container *ngIf="products.length ==0">
+        <div class="container">
+            <div class="card">
+                <h5 class="card-title">My Cart</h5>
+            </div>
+            <div class="center">
+                <img src="/assets/Images/empty.png" alt="">
+                <h4> Your cart is empty</h4>
+                <h6>Add item to it now</h6>
+                <button routerLink="/drycleaning" class="btn btn-success">Book Now</button>
+            </div>
+            </div>
+        
+    </ng-container>

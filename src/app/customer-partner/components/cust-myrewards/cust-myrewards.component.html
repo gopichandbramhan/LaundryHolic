@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 search-bar d-flex justify-content-center align-items-center mt-3">
+            <form class="d-flex" role="search">
+                <input class="form-control ps-3" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success px-3" type="submit"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid heading-section mt-3 mb-2">
+    <div class="row w-75 m-auto d-flex justify-content-around">
+        <div class="col-lg-6 col-md-6 col-sm-3 heading text-center">
+            <a href="" class="text-decoration-none text-dark" (click)="showWallet = true; showLHPoints = false;"><h4 [style.border-bottom]="showWallet ? '2px solid #30d5c7' : 'initial'">Wallet</h4></a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-3 heading text-center">
+            <a href="" class="text-decoration-none text-dark" (click)="showLHPoints = true; showWallet = false;"><h4 [style.border-bottom]="showLHPoints ? '2px solid #30d5c7' : 'initial'">LH Points</h4></a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid walletdata m-auto" *ngIf="showWallet">
+    <h4 class="d-flex justify-content-between align-items-center border-bottom pb-2 pt-1 px-1"><span>Wallet
+            Amount</span><span class="label">₹{{walletamount}}</span></h4>
+    <p class="ps-2 text-secondary">History</p>
+    <div class="row d-flex justify-content-between align-items-start border-bottom py-2 px-2 align-text-top"
+        *ngFor="let walletdata of walletdatas">
+
+        <div class="col-lg-4 col-md-4 col-sm-4 wallet-item text-start text-secondary">
+            <span>{{walletdata.date}} :</span>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 wallet-item text-left text-secondary w-75 ">
+            <span> {{walletdata.content}}</span>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 wallet-item text-end text-secondary">
+            <span class="label">+ ₹{{walletdata.amount}}</span>
+        </div>
+    </div>
+    <div class="btn-addmoney m-auto d-flex justify-content-center align-items-center mt-3 " (click)="gotoAddMoneyToWallet()">
+        <button class="text-center fw-bold">Add Money</button>
+    </div>
+</div>
+
+<div class="container-fluid LHPointsData m-auto" *ngIf="showLHPoints">
+    <h4 class="d-flex justify-content-between align-items-center border-bottom pb-2 pt-1 px-1"><span>LH
+        Points</span><span class="label">₹{{LHPoints}}</span></h4>
+    <div class="row d-flex justify-content-between align-items-start border-bottom py-2 px-2 align-text-top"
+    *ngFor="let lhpointsdata of LHPointsData">
+
+        <div class="col-lg-4 col-md-4 col-sm-4 lh-item text-start text-secondary">
+            <span>{{lhpointsdata.date}} :</span>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 lh-item text-left text-secondary w-75 d-flex flex-column">
+            <span class="ps-1"> {{lhpointsdata.content}}</span>
+            <span class="ps-1">Order ID : {{lhpointsdata.orderId}}</span>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 lh-item text-end text-secondary">
+            <span class="label">+ ₹{{lhpointsdata.amount}}</span>
+        </div>
+    </div>
+</div>

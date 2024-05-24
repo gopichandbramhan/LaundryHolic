@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    --themecolor: #30d5c7;
+}
+
+.search-bar form {
+    width: 90%;
+}
+
+.search-bar input {
+    border: 1px solid var(--themecolor);
+    border-radius: 8px;
+    border-bottom: 3px solid var(--themecolor);
+}
+
+.search-bar button {
+    border-bottom: 3px solid var(--themecolor);
+}
+
+.search-bar button:hover {
+    background-color: var(--themecolor);
+    color: white;
+}
+
+.home-main-card {
+    width: fit-content;
+    border: none;
+    border: 1px solid var(--themecolor);
+    border-radius: 5px;
+}
+
+.home-main-card:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.home-main-card a {
+    color: rgb(137, 137, 137);
+    font-size: 12px;
+}
+
+.home-main-card img {
+    height: 72px;
+    width: 72px;
+    border-radius: 50px;
+}
+
+
+/* Small Slider */
+.slider-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.icon-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.icon-inner-container {
+    text-align: center;
+}
+
+.icon-title {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.slider-wrapper {
+    width: 100%;
+}
+
+.weekendspecialbanner {
+    background-image: linear-gradient(#23AFA3, #30D5C7);
+    width: 90%;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    height: 200px;
+}
+
+.weekendspecialbanner button {
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: #293041;
+    padding: 5px 15px;
+}
+
+.weekendspecialbanner img {
+    height: 200px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.carousel-indicators button {
+    background-color: #2a5d51;
+}
+
+.cards {
+    width: 48%;
+    padding: 20px 0 20px 20px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cards-div h6 {
+    color: #23AFA3;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 24px;
+}
+
+.cards p {
+    color: #979797;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.cards img {
+    width: 100px;
+    height: 100px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+.cards2 img {
+    width: 200px;
+    height: 150px;
+    margin-right: 40px;
+    margin-top: -5px;
+}
+
+.cards1 {
+    background-color: #30D5C733;
+}
+
+.cards2 {
+    width: 48%;
+    padding: 20px 0 20px 20px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 2px solid #30D5C7;
+}
+
+a {
+    text-decoration: none;
+    color: #979797;
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-item img {
+        width: 100%;
+        height: 170px;
+        border-radius: 10px;
+    }
+
+    .cards {
+        width: 48%;
+        background-color: #30D5C733;
+        padding: 10px;
+        margin: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+
+    .cards-div1 {
+        margin-right: 0px;
+    }
+
+    .cards-div h6 {
+        color: #23AFA3;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .cards p {
+        color: #979797;
+        background-color: white;
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        margin-top: 10px;
+    }
+
+    .cards img {
+        width: 40px;
+        height: 40px;
+        margin-right: 0px;
+    }
+
+    .cards p,
+    h6 {
+        padding: 0px;
+    }
+
+    .cards2 img {
+        width: 70px;
+        height: 50px;
+        margin-right: 0px;
+        margin-top: -5px;
+    }
+
+    .cards2 p {
+        color: #979797;
+        background-color: white;
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        margin-top: 0px;
+    }
+
+    .cards2 {
+        width: 48%;
+        padding: 10px;
+        margin: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .home-main-card a {
+        font-size: 8px;
+    }
+
+    .home-main-card img {
+        height: 70px;
+        width: 70px;
+    }
+
+    .weekendspecialbanner {
+        height: 100px;
+    }
+
+    .weekendspecialbanner .banner-item {
+        width: fit-content;
+    }
+
+    .weekendspecialbanner h2 {
+        font-size: 12px;
+    }
+
+    .weekendspecialbanner p {
+        font-size: 8px;
+    }
+
+    .weekendspecialbanner button {
+        padding: 5px 15px;
+        font-size: 8px;
+    }
+
+    .weekendspecialbanner img {
+        width: 180px;
+        height: auto;
+    }
+
+    .weekendspecialbanner {
+        background-image: linear-gradient(#23AFA3, #30D5C7);
+        width: 99%;
+        color: white;
+        border-radius: 8px;
+        border: none;
+    }
+
+    .home-main-card a {
+        font-size: 8px;
+    }
+
+    .home-main-card {
+        height: 60px;
+        width: 60px;
+        font-size: 8px;
+    }
+
+    .home-main-card p {
+        text-align: center;
+        font-size: 7px;
+    }
+    .home-main-card img {
+        margin-top: -5px;
+        height: 40px;
+        width: 40px;
+    }
+
+    .weekendspecialbanner {
+        height: 100px;
+    }
+
+    .weekendspecialbanner .banner-item {
+        width: fit-content;
+    }
+
+    .weekendspecialbanner h2 {
+        font-size: 14px;
+    }
+
+    .weekendspecialbanner p {
+        font-size: 8px;
+    }
+
+    .weekendspecialbanner button {
+        padding: 5px 15px;
+        font-size: 8px;
+    }
+
+    .weekendspecialbanner img {
+        width: 180px;
+        height: auto;
+    }
+    .carousel-item img {
+        height: 260px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cards {
+        width: 48%;
+        background-color: #30D5C733;
+        padding: 10px;
+        margin: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .weekendspecialbanner {
+        height: 150px;
+        width: 93%;
+    }
+
+    .weekendspecialbanner .banner-item {
+        width: fit-content;
+    }
+
+    .weekendspecialbanner h2 {
+        font-size: 20px;
+    }
+
+    .weekendspecialbanner p {
+        font-size: 10px;
+    }
+
+    .weekendspecialbanner button {
+        padding: 5px 15px;
+        font-size: 10px;
+    }
+
+    .weekendspecialbanner img {
+        width: 250px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .weekendspecialbanner {
+        height: 121px;
+    }
+
+    .weekendspecialbanner .banner-item {
+        width: fit-content;
+    }
+
+    .weekendspecialbanner h2 {
+        font-size: 20px;
+    }
+
+    .weekendspecialbanner p {
+        font-size: 10px;
+    }
+
+    .weekendspecialbanner button {
+        padding: 5px 15px;
+        font-size: 10px;
+    }
+
+    .weekendspecialbanner img {
+        width: 250px;
+        height: auto;
+    }
+
+    .carousel-item img {
+        height: 398px;
+    }
+
+}

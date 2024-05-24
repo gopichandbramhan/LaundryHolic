@@ -1,0 +1,55 @@
+.btn-page-review {
+    border-radius: 50%;
+    color: #00aa85;
+    border-color: #00aa85;
+
+}
+
+.btn-page-review:hover {
+    background-color: none;
+}
+
+.horizontal {
+    width: 130px;
+
+}
+
+@media screen and(min-width: 320px) and (max-width: 480px) {}
+
+.page-review {
+    width: fit-content;
+
+}
+
+.img-product {
+    width: 100px;
+}
+
+.content-class {
+    vertical-align: center;
+}
+
+.row-1 {
+    border: solid 1px;
+    border-color: #00aa85;
+
+}
+
+.custom-button {
+    background-color: #00aa85;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: white;
+    color: #00aa85;
+    border: 1px solid;
+    border-radius: 20px;
+}

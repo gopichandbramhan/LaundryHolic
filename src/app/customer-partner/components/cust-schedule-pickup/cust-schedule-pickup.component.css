@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    --themecolor: #30d5c7;
+    --text-gray: #a5a5a5;
+    --background: #dcfffa;
+}
+
+.label {
+    color: var(--themecolor);
+}
+
+.back-button button {
+    border: 0;
+    background: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+
+.address-container,
+.delivery-methods,
+.choose-pickup-date,
+.choose-vendor {
+    width: 95%;
+}
+
+.address-container p {
+    box-shadow: 2px 2px 5px var(--text-gray);
+    border-radius: 8px;
+    color: gray;
+}
+
+.delivery-mode1,
+.delivery-mode2 {
+    color: #828282;
+    background: none;
+    border: 3px solid #828282;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+}
+
+.delivery-methods .normal,
+.delivery-methods .express {
+    opacity: 40%;
+}
+
+.activeexpress,
+.activenormal {
+    border: 3px solid var(--themecolor);
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    background: none;
+    color: #828282;
+}
+
+.activeexpress h6,
+.activenormal h6 {
+    color: var(--themecolor);
+}
+
+/* months Slider */
+.slider-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.currentmonth {
+    color: #30d5c7;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.icon-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.icon-inner-container a {
+    color: black;
+    font-size: small;
+}
+
+.choose-pickup-date input {
+    width: 95%;
+    border: 1px solid #30d5c7;
+    outline: none;
+    padding: 5px;
+    border-radius: 8px;
+    color: black;
+}
+
+.fade.show {
+    opacity: 1;
+}
+
+.slider-wrapper {
+    width: 100%;
+}
+
+.icon-inner-container a,
+.days {
+    font-size: 18px;
+}
+
+.day {
+    background-color: #f7f7f7;
+}
+
+.slots {
+    background: none;
+    color: #5e5e5e;
+    width: 300px;
+}
+
+.selected {
+    border: 1px solid var(--themecolor);
+    color: var(--themecolor);
+}
+
+.choose-vendor button {
+    width: 95%;
+    border: 1px solid var(--themecolor);
+    background-color: var(--background);
+}
+
+.next-btn {
+    background-color: white;
+}
+
+.next-btn button {
+    width: 95%;
+    border-radius: 50px;
+    background-color: var(--themecolor);
+    border: 1px solid var(--themecolor);
+    color: white;
+}
+
+
+
+.next-btn button:hover {
+    background-color: white;
+    color: var(--themecolor);
+}
+
+/*  START SELECT VENDOR LIST CSS */
+
+.shop img,
+.shop {
+    width: 91px;
+}
+
+.shop-info {
+    width: 80%;
+    margin: auto;
+}
+
+.container h6 {
+    font-size: 25px;
+}
+
+.container select,
+.container option {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .shops-list-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .shop {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shop img {
+        width: 65px;
+    }
+
+    .shop-info,
+    .shop-info h6 {
+        width: 75%;
+        font-size: small;
+    }
+
+    .container .top-heading {
+        font-size: medium;
+        width: 85%;
+        margin: auto;
+    }
+
+    .back-container button,
+    .back-container span,
+    .address-container h6,
+    .address-container,
+    .choose-pickup-date h6 {
+        font-size: small;
+    }
+
+    .delivery-methods {
+        display: flex;
+
+    }
+
+    .deliverynormal,
+    .deliveryexpress {
+        width: 152px;
+    }
+
+    .delivery-methods img {
+        height: 50px;
+        width: 50px;
+        opacity: 40%;
+    }
+
+    .delivery-methods span {
+        color: var(--text-gray);
+        font-size: 12px;
+    }
+
+    .delivery-methods h6 {
+        font-size: small;
+    }
+
+    .icon-inner-container a,
+    .days {
+        font-size: 11px;
+    }
+
+    .slots {
+        width: 145px;
+        font-size: small;
+    }
+
+    .choose-vendor button {
+        font-size: small;
+    }
+
+    .next-btn button {
+        font-size: small;
+    }
+
+    .main-container {
+        width: 95%;
+    }
+    .container h6 {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .delivery-methods img {
+        height: 100px;
+        width: 100px;
+        opacity: 40%;
+    }
+
+    .delivery-mode1,
+    .delivery-mode2 {
+        width: 350px;
+    }
+
+}
+
+/* Shedule pickup apply cupon code */
+
+
+.label {
+    color: var(--themecolor);
+}
+
+.back-button button {
+    border: 0;
+    background: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+
+.container {
+    width: 50%;
+}
+
+.form-container input {
+    width: 100%;
+    box-shadow: 1px 1px 3px #23AFA3;
+    border: 1px solid #23AFA3;
+    padding: 5px 10px 5px 10px;
+    outline: none;
+    border-radius: 8px;
+}
+
+.check-box input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.wallet-amount {
+    border: 1px solid #23AFA3;
+    border-radius: 8px;
+    padding: 10px;
+
+}
+
+.form-container button {
+    color: #23AFA3;
+    border: none;
+    background-color: white;
+    margin-left: -48px;
+}
+
+.span-div {
+    color: #23AFA3;
+}
+
+.order-summery-div {
+    padding: 0 5px 0 5px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 42px;
+}
+
+.text-gray {
+    color: #565758;
+    font-weight: 400;
+    padding-right: 3px;
+    font-size: 14px;
+}
+
+.view-btn {
+    background-color: #30D5C7;
+    color: white;
+    border: none;
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px;
+}
+
+.Proceed-btn {
+    width: 100%;
+    background-color: #30D5C7;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 5px 0 5px 0;
+
+}
+.select-btn{
+    width: 100%;
+    border: 1px solid #30D5C7;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 1px 2px 2px #30D5C7;
+    outline: none;
+    color:#30D5C7 ;
+    
+}
+option {
+    color:#30D5C7 ;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    .select-btn{
+        font-size: small; 
+    }
+    option {
+        color:#30D5C7 ;
+        /* background-color:#30D5C7 ; */
+    }
+    
+    .order-summery-div {
+        padding: 0 5px 0 5px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 25px;
+    }
+
+    .text-gray {
+        color: #565758;
+        font-weight: 200;
+        padding-right: 3px;
+        font-size: 10px;
+    }
+
+    .view-btn {
+        background-color: #30D5C7;
+        color: white;
+        border: none;
+        padding: 0px 5px 0px 5px;
+        border-radius: 5px;
+    }
+
+    .container {
+        width: 100%;
+    }
+}

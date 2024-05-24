@@ -1,0 +1,110 @@
+<div class="container m-auto first mt-4">
+  <div class="row mx-2">
+    <div class="col-lg-12 col-sm-12 col-md-12  d-flex align-items-center justify-content-center m-auto">
+      <input type="search" name="" id="" placeholder="Search" class="px-3 py-2">
+      <span class="text-center searchicon d-flex justify-content-center align-items-center"><i
+          class="fa-solid fa-magnifying-glass "></i></span>
+    </div>
+  </div>
+
+  <div class="row mt-3 second mx-2">
+    <div class="col-lg-12">
+      <h3 class="m-auto d-flex justify-content-between align-items-center px-3 py-2"><span>Total Wallet
+          Balance</span><span>₹{{value}}</span></h3>
+    </div>
+  </div>
+
+  <div class="row third mt-3 mx-2">
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center">
+      <span class="icon-left">₹</span>
+      <button class="fw-medium d-flex justify-content-between align-items-center px-3 py-2"
+        routerLink="add_money_to_wallet"><span>Add Money to
+          Wallet</span><span><i class="fa-solid fa-angle-right"></i></span></button>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center">
+      <span class="icon-left"><i class="fa-regular fa-file-lines"></i></span>
+      <button class="fw-medium d-flex justify-content-between align-items-center px-3 py-2"
+        routerLink="request_statement"><span>Request
+          Statement</span><span><i class="fa-solid fa-angle-right"></i></span></button>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center">
+      <span class="icon-left"><i class="fa-solid fa-chart-bar"></i></span>
+      <button class="fw-medium d-flex justify-content-between align-items-center px-3 py-2"
+        routerLink="view_monthly_analysis"><span>View Money
+          Analysis</span><span><i class="fa-solid fa-angle-right"></i></span></button>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center">
+      <span class="icon-left"><i class="fa-regular fa-file"></i></span>
+      <button class="fw-medium d-flex justify-content-between align-items-center px-3 py-2"
+        routerLink="withdrawal_request"><span>Withdrawal
+          Request</span><span><i class="fa-solid fa-angle-right"></i></span></button>
+    </div>
+  </div>
+
+  <div class="row fourth mt-3 mx-2">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <h4 class="py-3 ps-3">Recent Transaction</h4>
+      <h6 class="py-2 ps-3 labels backcolor">05 Apr 2024</h6>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="row d-flex justify-content-between align-items-center">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-between align-items card1 px-3 py-4 mb-2">
+          <div class="d-flex flex-column align-items-start justify-content-evenly">
+            <p class="d-flex"><span class="labels">Cust.Order ID</span>: <span>023</span></p>
+            <p><span class="labels">Date</span> : <span>05/04/2024 | </span><span>05:01:00 pm</span></p>
+            <p class="d-flex"><span class="labels">Transaction No.</span> : <span>***********************</span></p>
+            <p><span>Wallet Closing Bal. :</span>₹<span>2300</span></p>
+          </div>
+          <div class="d-flex flex-column align-items-end justify-content-around">
+            <p class="labels">+₹<span>500</span></p>
+            <p class="text-primary">Credit</p>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-between align-items-center card1 px-3 py-3 mb-2">
+          <div class="d-flex flex-column align-items-start justify-content-evenly">
+            <h5 class="text-success py-2">Money added by Self</h5>
+            <p><span class="labels">Date</span> : <span>05/04/2024 | </span><span>05:01:00 pm</span></p>
+            <p><span class="labels">Transaction No.</span> : <span>***********************</span></p>
+            <p><span>Wallet Closing Bal. :</span>₹ <span> 1800</span></p>
+          </div>
+          <div class="d-flex flex-column align-items-end justify-content-evenly">
+            <p class="labels">+₹<span>800</span></p>
+            <p class="text-primary">Credit</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row fifth mt-3 mx-2">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <h6 class="py-2 ps-3 labels backcolor">30 March 2024</h6>
+    </div>
+  </div>
+  <div class="row d-flex sixth justify-content-between align-items-center mx-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-between align-items-center card1 px-3 py-3 mb-2">
+      <div class="d-flex flex-column align-items-start justify-content-evenly">
+        <h5 class="text-success py-2">Self-Withdrawal</h5>
+        <p><span class="labels">Date</span> : <span>05/04/2024 | </span><span>05:01:00 pm</span></p>
+        <p><span class="labels">Transaction No.</span> : <span>***********************</span></p>
+        <p><span>Wallet Closing Bal. :</span>₹<span>1000</span></p>
+      </div>
+      <div class="d-flex flex-column align-items-end justify-content-around">
+        <p>-₹<span>3000</span></p>
+        <p class="text-dark-emphasis">Debit</p>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-between align-items card1 px-3 py-4 mb-2">
+      <div class="d-flex flex-column align-items-start justify-content-evenly">
+        <p><span class="labels">Cust. Order ID</span>: <span>005</span></p>
+        <p><span class="labels">Date</span> : <span>05/04/2024 | </span><span>05:01:00 pm</span></p>
+        <p><span class="labels">Transaction No.</span> : <span>***********************</span></p>
+        <p><span>Wallet Closing Bal. :</span>₹<span>4000</span></p>
+      </div>
+      <div class="d-flex flex-column align-items-end justify-content-around">
+        <p class="text-danger">₹<span>250</span></p>
+        <p class="text-danger">Failed</p>
+      </div>
+    </div>
+  </div>
+</div>

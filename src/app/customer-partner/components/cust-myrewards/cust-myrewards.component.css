@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    --themecolor: #30d5c7;
+}
+.label{
+    color: var(--themecolor);
+}
+
+.search-bar form {
+    width: 90%;
+}
+
+.search-bar input {
+    border: 1px solid var(--themecolor);
+    border-radius: 8px;
+    border-bottom: 3px solid var(--themecolor);
+}
+
+.search-bar button {
+    border-bottom: 3px solid var(--themecolor);
+}
+
+.search-bar button:hover {
+    background-color: var(--themecolor);
+    color: white;
+}
+
+
+
+/* wallet */
+.walletdata .wallet-item, .LHPointsData .lh-item{
+    width: fit-content;
+}
+.walletdata, .LHPointsData{
+    width: 90%;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 10px;
+    padding: 10px 5px;
+}
+.btn-addmoney{
+    border: 1px solid var(--themecolor);
+    color: var(--themecolor);
+    background-color: rgb(211, 255, 254);
+    border-radius: 8px;
+    width: inherit;
+    height: 50px;
+    cursor: pointer;
+}
+.btn-addmoney button{
+    background: none;
+    border: none;
+    color: #30d5c7;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .wallet-item, .lh-item{
+        width: inherit;
+        font-size: 11px;
+    }
+    .heading{
+        cursor: pointer;
+    }
+    .heading, .lh-item{
+        width: fit-content;
+    }
+    .heading h4, .walletdata h4, .LHPointsData h4{
+        font-size: 14px;
+    }
+    .btn-addmoney{
+        height: 30px;
+        font-size: 12px;
+    }
+    
+}

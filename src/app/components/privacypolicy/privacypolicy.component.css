@@ -1,0 +1,36 @@
+h4.sub-tittle-tem-laundrylayouts.let {
+    font-size: 40px;
+    margin-top: -63px;
+    /* color: #00a9859; */
+    color: #00a985;
+    text-decoration: underline;
+}
+.fadeLeft {
+    animation: fadeLeftAnimation 1s ease forwards;
+  }
+  
+  @keyframes fadeLeftAnimation {
+    from {
+      opacity: 0;
+      transform: translateX(-63px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(1px);
+    }
+  }
+
+  .fadeRight {
+    animation: fadeRightAnimation 1s ease forwards;
+  }
+  
+  @keyframes fadeRightAnimation {
+    from {
+      opacity: 0;
+      transform: translateX(500px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }

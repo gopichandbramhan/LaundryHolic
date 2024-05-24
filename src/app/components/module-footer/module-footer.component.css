@@ -1,0 +1,56 @@
+.logo img {
+    width: 300px;
+}
+
+.footer-container {
+    background-color: #30d5c7;
+    color: rgb(0, 0, 0);
+}
+
+.logo {
+    border-bottom: 1px solid #30d5c7;
+}
+
+.footer-third p a:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.follow-options li {
+    background-color: #e1fffd;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    transition: 0.4s;
+}
+
+.follow-options li:hover {
+    font-size: 50px;
+    background: none;
+    border: none;
+}
+
+.follow-options li a {
+    color: #30d5c7;
+}
+
+@media screen and (max-width: 480px) {
+    .follow-options li {
+        width: 30px;
+        height: 30px;
+        font-size: medium;
+    }
+    .logo li{
+        font-size: 10px;
+    }
+    .footer-container{
+        font-size: 10px;
+    }
+    .logo img {
+        width: 224px;
+    }
+}

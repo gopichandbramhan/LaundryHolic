@@ -1,0 +1,45 @@
+img.img-responsive.image-style-logo {
+    width: 260px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+:host {
+    --themecolor: #008064;
+}
+
+ul.navbar-nav.ms-auto.nav-style-all {
+    font-size: 17px;
+    font-weight: bold;
+    color: #4e5659;
+}
+
+.hove-list-all:hover {
+    color: #08493b;
+}
+
+.btn .badge {
+    top: -12px !important;
+}
+
+.btn {
+    background: var(--themecolor);
+    color: white;
+}
+
+.btn span {
+    font-size: 9px;
+}
+
+@media screen and (max-width:768px) {
+    li.nav-item.hove-list-all {
+        border-bottom: 1px solid #e7e7e7;
+        font-size: 11px;
+    }
+
+    img.img-responsive.image-style-logo {
+        width: 230px;
+    }
+
+}

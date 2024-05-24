@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:host {
+    --themecolor: #30d5c7;
+    --white-text: rgb(255, 255, 255);
+    --text-gray: #4e5659;
+    --bg-color: #f2f3f3;
+}
+
+.labels {
+    color: var(--themecolor);
+}
+
+.textcolor {
+    color: var(--text-gray);
+}
+
+.first .back-arrow {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background: var(--bg-color);
+    border-radius: 50px;
+    text-decoration: none;
+    color: black;
+    border: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+.container span {
+    font-size: large;
+}
+
+.second h3 {
+    color: var(--white-text);
+    background-color: var(--themecolor);
+    border: 3px solid var(--text-gray);
+    border-radius: 3px;
+}
+
+.third input {
+    border: 1px solid var(--themecolor);
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.third button {
+    border-radius: 50px;
+    background-color: var(--themecolor);
+    color: var(--white-text);
+    border: 1px solid var(--themecolor);
+    font-size: 18px;
+}
+
+.third button:hover {
+    background-color: var(--white-text);
+    color: var(--themecolor);
+}
+
+@media screen and (max-width: 480px) {
+    .container span {
+        font-size: small;
+    }
+    .third input{
+        font-size: small;
+        padding: 5px 5px;
+    }
+    .third button{
+        font-size: small;
+        padding: 0;
+    }
+    .first .back-arrow {
+        width: 20px;
+        height: 20px;
+        font-size: small;
+    }
+}

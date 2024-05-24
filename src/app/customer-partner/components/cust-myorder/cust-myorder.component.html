@@ -1,0 +1,441 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 search-bar d-flex justify-content-center align-items-center mt-3">
+            <form class="d-flex" role="search">
+                <input class="form-control ps-3" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success px-3" type="submit"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="accepteddatapanel ">
+    <div class="row mt-1 m-auto accepted">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header style="height: 160px;" class="px-3 py-3">
+                        <mat-panel-title>
+                            <div class="container text-center">
+                                <div class="row d-flex justify-content-evenly align-items-center">
+
+                                    <div
+                                        class="col-lg-8 col-md-10 col-sm-10 dropdown1 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <span class="d-flex  shopping-cart-icon-div">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </span>
+                                        </div>
+                                        <div class="order-details text-left">
+                                            <p><span class="labels">Order ID</span> : 001</p>
+                                            <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                            <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                            <p><span class="labels">Status</span> : <span
+                                                    class="text-warning">Accepted</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-2 col-sm-2 dropdown1">
+                                        <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                            600</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="accordion-body d-flex flex-column acceptedaccordianbody">
+                        <div class="row d-flex justify-content-evenly">
+                            <div class=" col-lg-6 col-md-6 col-sm-3 option-btn-details">
+                                <button class="order-details-btn"
+                                    (click)="showOrderDetail = true; showDeliveryPerson=false; "
+                                    [style.background-color]="showOrderDetail ? '#30D5C7' : 'initial'"
+                                    [style.color]="showOrderDetail ? 'white' : 'initial'">Order Details</button>
+                            </div>
+                            <div class=" col-lg-6 col-md-6 col-sm-3 option-btn-details">
+                                <button class="delivery-person-btn "
+                                    (click)="showDeliveryPerson=true; showOrderDetail=false;"
+                                    [style.background-color]="showDeliveryPerson ? '#30D5C7' : 'initial'"
+                                    [style.color]="showDeliveryPerson ? 'white' : 'initial'">Delivery Person</button>
+                            </div>
+                        </div>
+                        <div *ngIf="showOrderDetail">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Estimeted Delivery Date</span> : <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Store Name</span> : <span>Akshay Shop</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-lg-6 col-md-6 col-sm-4">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-8">
+                                    <p >
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="view-btn-p">
+                                        <span class="labels">Images</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="view-btn">
+                                        <span><button  (click)="openModal()">view
+                                            </button></span>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item1">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item1">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <p class="d-flex justify-content-between"><span class="labels"><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Item amount <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span>
+                                            <span style="color: gray;">(Inclu. GST)</span><i
+                                                class="fa-solid fa-indian-rupee-sign ms-1"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Selling Price <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Delivery Charge <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>40.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Express Delivery
+                                            Charge <span style="color: rgb(30, 30, 30);">:</span></span> <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Discount <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span>-<i
+                                                class="fa-solid fa-indian-rupee-sign ms-1"></i>50.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Wallet Amount <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span>-<i
+                                                class="fa-solid fa-indian-rupee-sign ms-1"></i>00.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">LH Points <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span>-<i
+                                                class="fa-solid fa-indian-rupee-sign ms-1"></i>00.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Total<span
+                                                style="color: rgb(30, 30, 30);">:</span> </span> <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>450.00</span></p>
+                                </div>
+                            </div>
+
+
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2" (click)="goToTrackOrder()">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="showDeliveryPerson">
+                            <div class="delivery-person-div mt-2 mb-2">
+                                <img class="profile-image-delivery-person " src="assets/Images/profilephoto.jpg"
+                                    alt="profile">
+                                <h6 class="text-center mt-2">Akash Wilson</h6>
+                            </div>
+                            <div class="d-flex justify-content-between  mb-2">
+                                <h6>Contact No</h6>
+                                <span>:</span>
+                                <button class="call-btn">
+                                    <i class="fa fa-phone color:#30D5C7"></i>
+                                    Call now</button>
+                            </div>
+                            <div class="d-flex justify-content-between ">
+                                <h6>Helpline No.</h6>
+                                <span>:</span>
+                                <button class="call-btn">
+                                    <i class="fa fa-phone color:#30D5C7"></i>
+                                    Call now</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header style="height: 160px;" class="px-3 py-3">
+                        <mat-panel-title>
+                            <div class="container text-center">
+                                <div class="row d-flex justify-content-evenly align-items-center">
+
+                                    <div
+                                        class="col-lg-8 col-md-10 col-sm-10 dropdown1 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <span class="d-flex  shopping-cart-icon-div">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </span>
+                                        </div>
+                                        <div class="order-details text-left">
+                                            <p><span class="labels">Order ID</span> : 001</p>
+                                            <p><span class="labels">Booking Date</span> : 20/04/2024</p>
+                                            <p><span class="labels">Time Slot</span> : 9am - 11am</p>
+                                            <p><span class="labels">Status</span> : <span
+                                                    class="text-warning">Accepted</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-2 col-sm-2 dropdown1">
+                                        <span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>
+                                            600</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="accordion-body d-flex flex-column acceptedaccordianbody">
+                        <div class="row d-flex justify-content-evenly">
+                            <div class=" col-lg-6 col-md-6 col-sm-3 option-btn-details">
+                                <button class="order-details-btn"
+                                    (click)="showOrderDetail = true; showDeliveryPerson=false; "
+                                    [style.background-color]="showOrderDetail ? '#30D5C7' : 'initial'"
+                                    [style.color]="showOrderDetail ? 'white' : 'initial'">Order Details</button>
+                            </div>
+                            <div class=" col-lg-6 col-md-6 col-sm-3 option-btn-details">
+                                <button class="delivery-person-btn "
+                                    (click)="showDeliveryPerson=true; showOrderDetail=false;"
+                                    [style.background-color]="showDeliveryPerson ? '#30D5C7' : 'initial'"
+                                    [style.color]="showDeliveryPerson ? 'white' : 'initial'">Delivery Person</button>
+                            </div>
+                        </div>
+                        <div *ngIf="showOrderDetail">
+                            <div class="row mt-3">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Estimeted Delivery Date</span> : <span>22/04/2024</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h5><span class="labels">Store Name</span> : <span>Akshay Shop</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex ">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span class="labels">Pickup & Delivery Address</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><span>Plot No. 141 Dattatray Nagar, Nagpur, 440024,
+                                                Maharashtra</span><span></span></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p class="view-btn-p">
+                                        <span class="labels">Images</span> :
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <p>
+                                        <span><button class="view-btn" (click)="openModal()">view
+                                            </button></span>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item1">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <p><span class="labels"><i class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div
+                                class="row d-flex justify-content-center align-items-center border border-secondary mt-2 rounded">
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <img src="/assets/Images/blazer.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 item1">
+                                    <h6 class="labels">Blazer</h6>
+                                    <p><span class="labels">Quantity</span> : <span>1</span></p>
+                                    <p><span class="labels">Categories</span> : <span>Dry Cleaning</span></p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 item1">
+                                    <p class="d-flex justify-content-between"><span class="labels"><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>300</span></p>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Item amount <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span>
+                                            <span style="color: gray;">(Inclu. GST)</span><i
+                                                class="fa-solid fa-indian-rupee-sign ms-1"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Selling Price <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Delivery Charge <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>40.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Express Delivery
+                                            Charge <span style="color: rgb(30, 30, 30);">:</span></span> <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>500.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Discount <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span>-<i
+                                                class="fa-solid fa-indian-rupee-sign ms-1"></i>50.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Wallet Amount <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span>-<i
+                                                class="fa-solid fa-indian-rupee-sign ms-1"></i>00.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">LH Points <span
+                                                style="color: rgb(30, 30, 30);">:</span></span> <span>-<i
+                                                class="fa-solid fa-indian-rupee-sign ms-1"></i>00.00</span></p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6">
+                                    <p class="d-flex justify-content-between"><span class="labels">Total<span
+                                                style="color: rgb(30, 30, 30);">:</span> </span> <span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i>450.00</span></p>
+                                </div>
+                            </div>
+
+
+                            <div class="row traceorder">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+                                    <button class="px-2 py-2" (click)="goToTrackOrder()">Track Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="showDeliveryPerson">
+                            <div class="delivery-person-div mt-2 mb-2">
+                                <img class="profile-image-delivery-person " src="assets/Images/profilephoto.jpg"
+                                    alt="profile">
+                                <h6 class="text-center mt-2">Akash Wilson</h6>
+                            </div>
+                            <div class="d-flex justify-content-between  mb-2">
+                                <h6>Contact No</h6>
+                                <span>:</span>
+                                <button class="call-btn">
+                                    <i class="fa fa-phone color:#30D5C7"></i>
+                                    Call now</button>
+                            </div>
+                            <div class="d-flex justify-content-between ">
+                                <h6>Helpline No.</h6>
+                                <span>:</span>
+                                <button class="call-btn">
+                                    <i class="fa fa-phone color:#30D5C7"></i>
+                                    Call now</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>
+
+
+
+<!--  View Model -->
+<div class="modal fade" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'" id="exampleModalCenter"
+    tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered m-auto" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Images</h5>
+                <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body " style="width: 100px; ">
+                <!-- <img [src]="image.src" style="width: 30px;height: 30px;" alt=""> -->
+                <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active m-auto">
+            <img class="m-auto" src="/assets/Images/blazer.png" style="width: 100px; " alt="First slide">
+          </div>
+          <div class="carousel-item m-auto">
+            <img class="m-auto" src="/assets/Images/blazer.png" style="width: 100px;  " alt="Second slide">
+          </div>
+         
+        </div>
+        <a class="carousel-control-prev " href="#carouselExampleControls" role="button" data-slide="prev" style="color: black;">
+          <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next border" href="#carouselExampleControls"  role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div> 
+        </div>
+      </div>
+    </div> -->
+            </div>

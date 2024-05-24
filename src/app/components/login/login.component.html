@@ -1,0 +1,48 @@
+<div class="bg-imagr-login">
+  <div class="container">
+    <div class="body-style">
+      <div class="wrapper">
+        <form [formGroup]="loginForm">
+          <h1>Login</h1>
+          <div class="form-group">
+            <!-- <label for="sel1">Select list:</label> -->
+            <select class="form-control text-dark" formControlName="select"
+              [class.is-invalid]="f['select'].invalid && f['select'].touched">
+              <option value="Customer">Customer</option>
+              <option value="Bussiness Partner">Bussiness Partner</option>
+              <option value="Delivery Person">Delivery Person</option>
+            </select>
+            <p *ngIf="f['select'].invalid && f['select'].touched" style=" color:red; padding-left:5px">This field is
+              required</p>
+          </div>
+          <div class="form-group input-box">
+            <input type="number" class="px-3 py-3" [class.is-invalid]="f['number'].invalid && f['number'].touched"
+              placeholder=" Mobile Number" formControlName="number" required>
+            <p *ngIf="f['number'].invalid && f['number'].touched" style=" color:red; padding-left:5px">Mobile
+              number is required</p>
+          </div>
+          <div class="form-group input-box">
+            <input class="px-3 py-3" [class.is-invalid]="f['otp'].invalid && f['otp'].touched" placeholder="otp"
+              formControlName="otp" required>
+            <p *ngIf="f['otp'].invalid && f['otp'].touched" style=" color:red; padding-left:5px">otp is required</p>
+          </div>
+          <div class="register-link">
+            <p>Didn't recieved OTP? <a routerLink="/signup">Resend OTP</a></p>
+          </div>
+          <div class="remember-forgot text-center">
+            <!-- <label class="style-rememberm"><input type="checkbox">Remember Me</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+            <!-- <a class="style-forgotpass" href="">Forgot Password</a> -->
+            <div class="button-container">
+              <button type="submit" [disabled]="loginForm.invalid" class="btn px-5 py-2"
+                (click)="onLogin()">Proceed</button>
+            </div>
+            <div class="register-link">
+              <p>Dont have an account? <a routerLink="/signup">Signup</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

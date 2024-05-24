@@ -1,0 +1,376 @@
+<div class="form-main-body">
+  <div class="main-signup">
+    <div class="total-body">
+      <div class="container" *ngIf="isFormVisible">
+
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+          <div class="content">
+            <h2 class="text-center style-signup ">Edit Profile</h2>
+            <div class="row">
+              <div class="input-box">
+                <label for="name">Store Photo<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="file" placeholder="Upload Photo" class="form-control-file" formControlName="photo"
+                  id="photo" name="photo">
+                <p *ngIf="isFieldInvalid('photo')" style=" color:red; padding-left:5px">Store photo is required
+                </p>
+              </div>
+
+              <div class="input-box col-lg-6">
+                <label for="name">Full Name</label>
+                <input type="text" placeholder="Enter full name" name="fullname" id="fullname"
+                  formControlName="fullname">
+
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="name">Email</label>
+                <input type="email" placeholder="Enter your valid email address" name="email" id="email"
+                  formControlName="email">
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">Phone Number</label>
+                <input type="tel" placeholder="Enter phone number" name="phone" id="phone" formControlName="mob">
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="stateSelect">State</label>
+                <select type="text" placeholder="Select state" name="stateSelect" id="stateSelect"
+                  formControlName="state">
+                  <option value="maharastra">Maharastra</option>
+                  <option value="delhi">Delhi</option>
+                  <option value="gujarat">Gujarat</option>
+                </select>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="stateSelect">City</label>
+                <select type="text" placeholder="Select city" name="citySelect" id="citySelect" formControlName="city">
+                  <option value="nagpur">Nagpur</option>
+                  <option value="pune">Pune</option>
+                  <option value="mumbai">Mumbai</option>
+                </select>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">Date Of Birth<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="date" placeholder="Enter DOB" name="dob" id="dob" formControlName="dob" required>
+                <p *ngIf="isFieldInvalid('dob')" style=" color:red; padding-left:5px">Date Of Birth is required</p>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">Bank Name<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" placeholder="Enter Bank Name" name="bankname" id="bankname"
+                  formControlName="bankname" required>
+                <p *ngIf="isFieldInvalid('bankname')" style=" color:red; padding-left:5px">Bank name is
+                  required</p>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">Account Holder Name<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" placeholder="Enter Account Holder Name" name="accountholdername"
+                  id="accountholdername" formControlName="accountholdername" required>
+                <p *ngIf="isFieldInvalid('accountholdername')" style=" color:red; padding-left:5px">
+                  Account Holder name is required</p>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">Account Number<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="number" placeholder="Enter Account Number" name="accountnumber" id="accountnumber"
+                  formControlName="accountnumber" required>
+                <p *ngIf="isFieldInvalid('accountnumber')" style=" color:red; padding-left:5px">Account
+                  Number is required</p>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">IFSC Code<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" placeholder="Enter IFSC Code" name="ifsccode" id="ifsccode"
+                  formControlName="ifsccode" required>
+                <p *ngIf="isFieldInvalid('ifsccode')" style=" color:red; padding-left:5px">IFSC code is
+                  required</p>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">Store Name<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" placeholder="Enter Store Name" name="storename" id="storename"
+                  formControlName="storename" required>
+                <p *ngIf="isFieldInvalid('storename')" style=" color:red; padding-left:5px">Store Name is
+                  required</p>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">Gumasta</label>
+                <input type="text" placeholder="Enter Gumasta" id="gumasta" formControlName="gumasta">
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">PAN Card</label>
+                <input type="text" placeholder="Enter PAN Card" id="pancard" formControlName="pancard">
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">GST Number</label>
+                <input type="text" placeholder="Enter GST Number" id="gstnumber" formControlName="gstnumber">
+              </div>
+
+              <div class="input-box col-lg-6">
+                <label for="phone">Commision in %<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="number" placeholder="Enter Commision" name="commision" id="commision"
+                  formControlName="commision" required>
+                <p *ngIf="isFieldInvalid('commision')" style=" color:red; padding-left:5px">This field is
+                  required</p>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="stateSelect">Registration Plan Details<span
+                    style="color: red; font-size: 20px;">*</span></label>
+                <select type="text" placeholder="Select Registration Plan" name="registrationplan" id="registrationplan"
+                  formControlName="registrationplan" [(ngModel)]="selectedregistrationPlan" required>
+                  <option value="standard">Standard</option>
+                  <option value="premium">Premium</option>
+                  <option value="premiumpro">Premium Pro</option>
+                </select>
+                <p *ngIf="isFieldInvalid('registrationplan')" style=" color:red; padding-left:5px">
+                  Select Minimum one plan is required</p>
+              </div>
+
+              <div class="input-box col-lg-6" *ngIf="selectedregistrationPlan ">
+                <label for="stateSelect">Payment Method<span style="color: red; font-size: 20px;">*</span></label>
+                <select type="text" placeholder="Select Payment Method" name="paymentmethod" id="paymentmethod"
+                  formControlName="paymentmethod" [(ngModel)]="selectedTimePeriod" required>
+                  <option value="online">Online Payment</option>
+                  <option value="Cheque">Cheque Payment</option>
+                  <option value="cash">Cash Payment</option>
+                </select>
+                <p *ngIf="isFieldInvalid('paymentmethod')" style=" color:red; padding-left:5px">
+                  This field is required</p>
+              </div>
+              <div class="input-box col-lg-6 " *ngIf="selectedTimePeriod === 'Cheque'">
+                <label for="phone">Cheque Number<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="number" placeholder="Enter Cheque Number" name="Chequenumber" id="Chequenumber"
+                  formControlName="Chequenumber" required>
+                <p *ngIf="isFieldInvalid('Cheque')" style=" color:red; padding-left:5px">
+                  This field is
+                  required</p>
+              </div>
+              <div class="input-box col-lg-6">
+                <label for="phone">Store Address<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" placeholder="Enter Address" name="storeaddress" id="storeaddress"
+                  formControlName="storeaddress" required>
+                <p *ngIf="isFieldInvalid('storeaddress')" style=" color:red; padding-left:5px">Address is required</p>
+              </div>
+
+
+            </div>
+            <div class="button-container col-lg-12">
+              <button type="submit" [disabled]="!isFormValid()">Update Profile</button>
+
+
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="updated-profile " *ngIf="submittedData">
+      <h2 class=" text-center" style="color: #00aa85;">My Profile</h2>
+      <div class="row" *ngIf="!isFormVisible">
+        <div class="col-12">
+          <div>
+            <p>{{ submittedData.photo }}</p>
+          </div>
+        </div>
+        <div class="updated-profile-container">
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name ">
+            <div class="d-flex">
+              <h6>Full Name :</h6>
+              <p>{{ submittedData.fullname }}</p>
+            </div>
+            <div>
+              <div>
+                <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                  style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Email :</h6>
+              <p>{{ submittedData.email }}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Phone Number :</h6>
+              <p> {{ submittedData.mob }}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>State :</h6>
+              <p>{{ submittedData.state }} </p>
+            </div>
+
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>City :</h6>
+              <p> {{ submittedData.city }}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Date Of Birth :</h6>
+              <p> {{ submittedData.dob }}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Bank Name :</h6>
+              <p>{{ submittedData.bankname }}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Account Holder Name :</h6>
+              <p>{{ submittedData.accountholdername}}</p>
+            </div>
+
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Account Number :</h6>
+              <p>{{ submittedData.accountnumber}}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>IFSC Code :</h6>
+              <p>{{ submittedData.ifsccode}}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Store Name :</h6>
+              <p>{{ submittedData.storename}}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Gumasta :</h6>
+              <p>{{ submittedData.gumasta}}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>PAN Card :</h6>
+              <p>{{ submittedData.pancard}}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>GST Number :</h6>
+              <p>{{ submittedData.gstnumber}}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Registration Plan Details :</h6>
+              <p>{{ submittedData.registrationplan}}</p>
+            </div>
+            
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between  input-heading-name">
+            <div class="d-flex">
+              <h6>Comission in % :</h6>
+              <p>{{ submittedData.commision}}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+
+          </div>
+          <div class="col-lg-12 col-sm-12 d-flex justify-content-between input-heading-name">
+            <div class="d-flex">
+              <h6>Store Address :</h6>
+              <p>{{ submittedData.address}}</p>
+            </div>
+            <div>
+              <img src='assets/Images/edit-3-svgrepo-com.png' style="cursor: pointer;"
+                style="width:40px; height: 40px; cursor:pointer ; background-color: white; display: block; margin-left: auto;margin-right: auto; ">
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

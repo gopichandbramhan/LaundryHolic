@@ -1,0 +1,201 @@
+.total-body {
+  background-image: url('/assets/Images/newLoundry.jpg');
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0px;
+  text-align: center;
+}
+
+.about {
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  padding: 50px 20px;
+}
+
+.total-body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.text-about {
+  background: linear-gradient(135deg, #6e6e6e, #34dbba, #6e6e6e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.our-mission {
+  background: linear-gradient(100deg, #6e6e6e, #00ffcc, #797979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 28px;
+  font-family: sans-serif;
+}
+
+.sub-tittle-tem-laundrylayouts {
+  background: linear-gradient(100deg, #6e6e6e, #00ffcc, #797979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+}
+
+.why-choose-us {
+  background: linear-gradient(100deg, #6e6e6e, #00ffcc, #797979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.ourteam {
+  background: linear-gradient(135deg, #313131, #34dbba, #323232);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #ebfff9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  width: 280px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.name {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #009c78;
+}
+
+.btn-contact {
+  background-color: #34dbcd;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-contact:hover {
+  background-color: #2db5a9;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+  .sub-tittle-tem-laundrylayouts {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  .container {
+    margin-top: -39px;
+  }
+
+  .about-left {
+    padding: 1px 10px;
+  }
+
+  .total-body {
+    height: fit-content;
+  }
+
+  .card {
+    width: 254px;
+  }
+
+  .our-mission {
+    text-align: center;
+  }
+
+  .about-left,
+  .about-right {
+    padding: 1px 10px;
+  }
+
+  .footer-container {
+    margin-top: 10px;
+  }
+  .about{
+    width: 95%;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .card {
+    width: 100%;
+    max-width: 350px;
+    font-size: small;
+  }
+  .card img{
+    height: 51px;
+    width: 51px;
+  }
+}

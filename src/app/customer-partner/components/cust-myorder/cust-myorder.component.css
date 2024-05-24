@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    --themecolor: #30d5c7;
+}
+.search-bar form {
+    width: 90%;
+}
+
+.search-bar input {
+    border: 1px solid var(--themecolor);
+    border-radius: 8px;
+    border-bottom: 3px solid var(--themecolor);
+}
+
+.search-bar button {
+    border-bottom: 3px solid var(--themecolor);
+}
+
+.search-bar button:hover {
+    background-color: var(--themecolor);
+    color: white;
+}
+
+
+/* .......................................................................... */
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+:host {
+    --themecolor: #30d5c7;
+    --white-text: rgb(255, 255, 255);
+    --text-gray: #4e5659;
+    --bg-color: #dcdcdc;
+}
+
+.labels {
+    color: var(--themecolor);
+    font-size: 14px;
+}
+
+.orderoptions {
+    width: 99%;
+}
+.orderoptions button:active {
+    background-color: var(--themecolor);
+}
+
+.accepted {
+    width: 100%;
+}
+
+.acceptedaccordianbody,
+.processingaccordianbody,
+.deliveredaccordianbody,
+.rejectedaccordianbody {
+    border-top: 2.5px solid var(--text-gray);
+}
+
+.traceorder button,
+.getdirection {
+    margin-top: 10px;
+    width: 90%;
+    
+    color: white;
+    background-color: #30D5C7;
+    border: none;
+    border-radius: 8px;
+    
+}
+
+.view-btn button {
+    color: white;
+    background-color: #30D5C7;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    margin-top: 10px;
+}
+
+.accepted img,
+.processing img,
+.delivered img,
+.rejected img {
+    height: 98px;
+    border-radius: 8px;
+}
+
+.contact {
+    color: white;
+    background-color: var(--themecolor);
+    padding: 5px 6px;
+    border-radius: 50px;
+}
+mat-expansion-panel{
+    width: 97%;
+    margin: auto;
+}
+.accordion-body span{
+    font-size: 15px;
+}
+.order-details{
+    margin-left:20px;
+}
+
+.order-details-btn , .delivery-person-btn{
+    width: 100%;
+    margin-top: 10px;
+color:#30D5C7;
+    border: 1px solid #30D5C7;
+    background: none;
+    padding: 5px 10px 5px 10px;
+}
+
+.profile-image-delivery-person{
+    width: 100px;
+    height: 100px;
+    margin-right:auto ;
+    margin-left: auto;
+    text-align: center;
+}
+.delivery-person-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.call-btn{
+    background-color: #30D5C7;
+    color:white;
+    border: none;
+    padding:3px 10px 3px 10px;
+    border-radius: 8px;
+}
+.shopping-cart-icon-div i{
+    background-color: #30D5C7;
+    color:white;
+    border-radius: 50px;
+    padding:10px;
+    font-size: 24px;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .searchbar input {
+        width: 100%;
+    }
+
+    .orderoptions {
+        display: flex;
+    }
+
+    .orderoptions button {
+        font-size: 10px;
+    }
+
+    .orderoptions .order1 {
+        margin-left: -181px;
+        margin-right: 55px;
+        width: 24%;
+    }
+
+    .order-details{
+        font-size: 12px;
+    }
+    .accordion-body span{
+        font-size: 12px;
+    }
+    .item1 {
+        width: fit-content;
+    }
+
+    .dropdown1 {
+        width: fit-content;
+    }
+    .view-btn {
+        margin-top: -30px;
+        margin-left: 60px;
+    }
+    
+    .view-btn button {
+        color: white;
+        background-color: #30D5C7;
+        border: none;
+        border-radius: 8px;
+        width: 150px;
+        margin-top: 10px;
+    }
+    /* .view-btn{
+        margin-top: 10px;
+        width: 30%; 
+        color: white;
+        background-color: #30D5C7;
+        border: none;
+        border-radius: 8px;
+    } */
+    .order-details-btn , .delivery-person-btn{
+        width: 100%;
+        margin-top: 10px;
+    color:#30D5C7;
+        border: 1px solid #30D5C7;
+        background: none;
+        padding: 5px 10px 5px 10px;
+    }
+     .option-btn-details{
+    width: fit-content;
+} 
+.order-details{
+    margin-left:10px;
+}
+}
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+    .orderoptions .order1 {
+        margin-left: -220px;
+        margin-right: 55px;
+        width: 24%;
+    }
+    .accordion-body span{
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (min-width: 425px) and (max-width: 767px){
+    .orderoptions .order1 {
+        width: 23%;
+        margin-left: -263px;
+    }
+    .accordion-body span{
+        font-size: 12px;
+    }
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .orderoptions .order1 {
+        width: 100%;
+        font-size: 16px;
+    }
+    .accordion-body span{
+        font-size: 12px;
+    }
+
+}

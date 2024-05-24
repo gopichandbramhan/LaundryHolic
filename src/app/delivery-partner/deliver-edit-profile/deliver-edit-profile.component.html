@@ -1,0 +1,150 @@
+<div class="container m-auto">
+    <div class="row back-container mb-3">
+        <div class="col-lg-12 col-sm-12 col-md-12 back-button fs-4">
+            <button class="" (click)=" goBack()"><i class="fas fa-angle-left"></i></button>
+            <span class="label"> Edit Profile</span>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg-12 col-md-12 col-sm-12 first d-flex justify-content-center align-items-center flex-column">
+            <img src="assets/Images/profilephoto.jpg" class="img1">
+            <img [src]="imageUrl" (click)="fileInput.click()" class="img2">
+            <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)">
+        </div>
+    </div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="row mt-3">
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column my-2">
+                <label class="fw-bold" for="name">Name</label>
+                <input type="text" id="name" class="py-2 px-3" placeholder="Enter name here">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column my-2">
+                <label class="fw-bold" for="email">Email</label>
+                <input type="email" id="email" class="py-2 px-3" placeholder="Enter email here">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column my-2">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column state-col">
+                        <label class="fw-bold" for="state">Mobile No.</label>
+                        <input type="tel" placeholder="Enter contact number here" class="state py-2 px-3">
+                    </div>
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column city-col">
+                        <label class="fw-bold" for="city">DOB<span style="color: red; font-size: 20px;">*</span></label>
+                        <input type="date" id="city" placeholder="Enter date of birth here" class="city py-2 px-3"
+                            formControlName="dob" required>
+                        <p *ngIf="isFieldInvalid('dob')" style=" color:red; padding-left:5px">DOB is required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 my-2 state-city">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column state-col">
+                        <label class="fw-bold" for="state">State</label>
+                        <input type="text" placeholder="Enter state here" class="state py-2 px-3">
+                    </div>
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column city-col">
+                        <label class="fw-bold" for="city">City</label>
+                        <input type="text" id="city" placeholder="Enter city here" class="city py-2 px-3">
+                    </div>
+                </div>
+            </div>
+            <div class="input-box col-lg-12 col-md-12 d-flex flex-column col-sm-12 my-2">
+                <label class="fw-bold" for="phone">Permanent Address<span
+                        style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" class="py-2 px-3" placeholder="Enter Address" name="address" id="address"
+                    formControlName="address" required>
+                <p *ngIf="isFieldInvalid('address')" style=" color:red; padding-left:5px">Address is required</p>
+            </div>
+            <div class="input-box col-lg-12 col-md-12 d-flex flex-column col-sm-12 my-2">
+                <label class="fw-bold" for="phone">Bank Name<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" class="py-2 px-3" placeholder="Enter Bank Name" name="bankName" id="bankName"
+                    formControlName="bankName" required>
+                <p *ngIf="isFieldInvalid('bankName')" style=" color:red; padding-left:5px">Bank name is required</p>
+            </div>
+            <div class="input-box col-lg-12 col-md-12 d-flex flex-column col-sm-12 my-2">
+                <label class="fw-bold" for="phone">Account Holder Name<span
+                        style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" class="py-2 px-3" placeholder="Enter Account Holder Name" name="accountHolderName"
+                    id="accountHolderName" formControlName="accountHolderName" required>
+                <p *ngIf="isFieldInvalid('accountHolderName')" style=" color:red; padding-left:5px">Account holder name
+                    is required</p>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column my-2">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column state-col">
+                        <label class="fw-bold" for="state">Account No.<span
+                                style="color: red; font-size: 20px;">*</span></label>
+                        <input type="tel" placeholder="Enter account number here" class="state py-2 px-3"
+                            formControlName="accountNo" required>
+                        <p *ngIf="isFieldInvalid('accountNo')" style=" color:red; padding-left:5px">Account No is
+                            required</p>
+                    </div>
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column city-col">
+                        <label class="fw-bold" for="city">IFSC Code<span
+                                style="color: red; font-size: 20px;">*</span></label>
+                        <input type="text" id="city" placeholder="Enter IFSC code here" class="city py-2 px-3"
+                            formControlName="ifscCode" required>
+                        <p *ngIf="isFieldInvalid('ifscCode')" style=" color:red; padding-left:5px">IFSC Code is required
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column my-2">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column state-col">
+                        <label class="fw-bold" for="state">Aadhar No.<span
+                                style="color: red; font-size: 20px;">*</span></label>
+                        <input type="tel" placeholder="Enter aadhar number here" class="state py-2 px-3"
+                            formControlName="aadharNo" required>
+                        <p *ngIf="isFieldInvalid('aadharNo')" style=" color:red; padding-left:5px">Aadhar No is required
+                        </p>
+                    </div>
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column city-col">
+                        <label class="fw-bold" for="city">Pan Card<span
+                                style="color: red; font-size: 20px;">*</span></label>
+                        <input type="text" id="city" placeholder="Enter pan number here" class="city py-2 px-3"
+                            formControlName="panCard" required>
+                        <p *ngIf="isFieldInvalid('panCard')" style=" color:red; padding-left:5px">Pan number is required
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="input-box col-lg-12 col-md-12 d-flex flex-column col-sm-12 my-2">
+                <label class="fw-bold" for="phone">Driving License Number<span
+                        style="color: red; font-size: 20px;">*</span></label>
+                <input type="text" class="py-2 px-3" placeholder="Driving License Number" name="drivingLicenceNo"
+                    id="drivingLicenceNo" formControlName="drivingLicenceNo" required>
+                <p *ngIf="isFieldInvalid('drivingLicenceNo')" style=" color:red; padding-left:5px">Driving license
+                    number is required</p>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column my-2">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column state-col">
+                        <label class="fw-bold" for="state">Vehicle Model Name<span
+                                style="color: red; font-size: 20px;">*</span></label>
+                        <input type="tel" placeholder="Enter vehicle model name here" class="state py-2 px-3"
+                            formControlName="vehicleModelName" required>
+                        <p *ngIf="isFieldInvalid('vehicleModelName')" style=" color:red; padding-left:5px">Vehicle Model
+                            Name is required</p>
+                    </div>
+                    <div class="col-lg-5 col-sm-3 col-md-5 d-flex flex-column city-col">
+                        <label class="fw-bold" for="city">Vehicle No.<span
+                                style="color: red; font-size: 20px;">*</span></label>
+                        <input type="text" id="city" placeholder="Enter vehicle number here" class="city py-2 px-3"
+                            formControlName="vehicleNo" required>
+                        <p *ngIf="isFieldInvalid('vehicleNo')" style=" color:red; padding-left:5px">Vehicle No is
+                            required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 mb-2">
+                <div class="col-lg-12 col-sm-12 col-md-12 d-flex justify-content-center align-items-lg-baseline">
+                    <button type="submit" [disabled]="!isFormValid()" class="update-button py-2 px-3">Update
+                        Profile</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>

@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    --themecolor: #30d5c7;
+}
+
+.label {
+    color: var(--themecolor);
+}
+
+.shop img, .shop{
+    width: 91px;
+}
+.shop-info{
+    width: 80%;
+    margin: auto;
+}
+.container h6{
+    font-size: 20px;
+}
+.container select, .container option{
+    cursor: pointer;
+}
+@media screen and (min-width: 320px) and (max-width: 480px){
+    .shops-list-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .shop{
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .shop img{
+        width: 65px;
+    }
+    .shop-info, .shop-info h6{
+        width: 75%;
+        font-size: small;
+    }
+    .container .top-heading{
+        font-size: medium;
+        width: 85%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .container h6{
+        font-size: 16px;
+    }
+    .shop img{
+        width: 70px;
+    }
+    .shops{
+        width: 49%;
+    }
+    .shop-info{
+        width: 72%;
+        /* border: 1px solid red; */
+        font-size: small;
+    }
+    .shops-list-container{
+        width: 100%;
+    }
+}

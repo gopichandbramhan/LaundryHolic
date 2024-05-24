@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:host {
+    --themecolor: #30d5c7;
+    --background: #dcfffa;
+    --heading: #4e5659;
+}
+.label{
+    color: var(--themecolor);
+    font-size: 13px;
+}
+
+.back-button button {
+    background: none;
+    border: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+.back-button .label{
+    font-size: 20px;
+}
+.plans{
+    border: 1px solid var(--themecolor);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+    width: 97%;
+}
+.plans .serial-no{
+    background-color: var(--background);
+    color: var(--themecolor);
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 50px;
+    border: 1px solid var(--themecolor);
+}
+.plan-data{
+    width: fit-content;
+}
+.plans button{
+    background-color: var(--themecolor);
+    color: white;
+    border: 1px solid var(--themecolor);
+    border-radius: 50px;
+}

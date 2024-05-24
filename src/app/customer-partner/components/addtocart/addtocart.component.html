@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 search-bar d-flex justify-content-center align-items-center mt-3">
+            <form class="d-flex" role="search">
+                <input class="form-control ps-3" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success px-3" type="submit"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container m-auto">
+    <div class="row ">
+        <div class="col-lg-4 col-md-4 ">
+            <div class="d-flex justify-content-between align-items-center cust-dryclean-cart-div mt-2">
+                <div>
+                    <span class="cart-icons">👕</span>
+
+                </div>
+                <div>
+                    <h6>Shirt</h6>
+                    <p class="cart-gray-p">Dry Cleaning</p>
+                    <p class="cart-red-p">₹60/Item</p>
+                    <p class="cart-green-p">₹50/Item</p>
+                </div>
+                <div class="d-flex flex-column  align-items-end">
+                    <span class="cart-green-p">50%</span>
+                    <div class="d-flex justify-content-center align-items-center cust-cart-btn-div">
+                        <button class="cust-cart-btn1" (click)="decrementValue()"><i
+                                class="fa-solid fa-minus"></i></button>
+                        <p class="ps-1 px-1">{{value}}</p>
+                        <button class="cust-cart-btn2" (click)="increment()"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-end cust-estimated-price ">
+        <h6>Estimated Price</h6>
+        <p>₹{{estimatePrice}}</p>
+    </div>
+    <div>
+        <button class="cust-book-btn" [disabled]="value<=0" (click)="gotoSchedulePickup()">Book Order</button>
+    </div>
+</div>

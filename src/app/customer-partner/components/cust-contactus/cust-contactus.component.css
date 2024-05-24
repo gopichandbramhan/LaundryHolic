@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    --themecolor: #30d5c7;
+    --background: #dcfffa;
+    --heading: #4e5659;
+}
+
+.back-button .label{
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--themecolor);
+}
+.back-button button {
+    border: 0;
+    background: none;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+.icon {
+    height: 50px;
+    border-radius: 50px;
+    width: 50px;
+    background-color: var(--themecolor);
+    color: white;
+}
+
+.btn-contactus button {
+    background-color: var(--themecolor);
+    border: 1px solid var(--themecolor);
+    color: white;
+    width: 80%;
+    border-radius: 50px;
+}
+
+.btn-contactus button:hover {
+    background-color: white;
+    color: var(--themecolor);
+}
+
+.data {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .data {
+        width: 75%;
+        font-size: small;
+        font-weight: lighter;
+    }
+    .back-button button{
+        font-size: small;
+    }
+    .back-button .label{
+        font-size: medium;
+    }
+    .btn-contactus button{
+        font-size: small;
+    }
+    .icon{
+        height: 40px;
+        width: 40px;
+        font-size: small;
+    }
+}

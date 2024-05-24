@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    --themecolor: #30d5c7;
+}
+
+.search-bar form {
+    width: 90%;
+}
+
+.search-bar input {
+    border: 1px solid var(--themecolor);
+    border-radius: 8px;
+    border-bottom: 3px solid var(--themecolor);
+}
+
+.search-bar button {
+    border-bottom: 3px solid var(--themecolor);
+}
+
+.search-bar button:hover {
+    background-color: var(--themecolor);
+    color: white;
+}
+
+.cust-dryclean-cart-div {
+    border: 1px solid #30d5c7;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 2px 2px 5px;
+    width: 98%;
+}
+
+.cust-dryclean-cart-div h6 {
+    font-size: 14px;
+}
+
+.cart-icons {
+    color: #30d5c7;
+    font-size: 40px;
+}
+
+.cart-gray-p {
+    color: #979797;
+    font-size: 12px;
+}
+
+.cart-red-p {
+    color: red;
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+.cart-green-p {
+    color: #30d5c7;
+    font-size: 12px;
+}
+
+.cust-cart-btn-div p {
+    background-color: #30D5C733;
+    font-size: 20px;
+}
+
+.cust-cart-btn1 {
+    border: none;
+    background-color: #30D5C733;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0 10px 0 10px;
+    font-weight: 800px;
+    font-size: 20px;
+}
+
+.cust-cart-btn2 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    background-color: #30D5C733;
+    padding-right: 10px;
+    padding: 0 10px 0 10px;
+    font-size: 20px;
+}
+
+.cust-estimated-price p {
+    color: #23AFA3;
+}
+
+.cust-estimated-price h6 {
+    color: #565758;
+}
+
+.cust-estimated-price {
+    padding: 15px 5px 0 5px;
+    margin-top: 20px;
+}
+
+.cust-book-btn {
+    background-color: #30D5C7;
+    color: white;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.cust-book-btn:disabled {
+    background-color: #EFEFEF;
+    color: #979797;
+}
+
+@media screen and (min-width:320px) {
+    .cust-cart-btn-div p {
+        background-color: #30D5C733;
+        font-size: 16px;
+    }
+
+    .cust-cart-btn1,
+    .cust-cart-btn2 {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    --themecolor: #30d5c7;
+    --text-gray: #757575;
+    --background: #dcfffa;
+}
+
+.label {
+    color: var(--themecolor);
+}
+
+.back-button button {
+    border: 0;
+    background: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+
+.container {
+    height: 88vh;
+}
+
+.first .img1 {
+    height: 141px;
+    border-radius: 50%;
+    border: 1px solid var(--themecolor);
+}
+
+.first .img2 {
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--themecolor);
+    cursor: pointer;
+    margin-top: -35px;
+    margin-left: 90px;
+}
+
+.update-button {
+    border: 1px solid var(--themecolor);
+    color: white;
+    background-color: var(--themecolor);
+    width: 150px;
+    border-radius: 50px;
+}
+
+.update-button:hover {
+    background-color: white;
+    color: var(--themecolor);
+}
+
+form,
+.back-container {
+    width: 90%;
+    margin: auto;
+}
+
+form input {
+    border: 1px solid var(--themecolor);
+    border-radius: 5px;
+    outline-color: #249c92;
+}
+
+.state-col,
+.city-col {
+    width: 48%;
+}
+
+.state-city label {
+    width: fit-content;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    label,
+    input,
+    .update-button {
+        font-size: small;
+    }
+}

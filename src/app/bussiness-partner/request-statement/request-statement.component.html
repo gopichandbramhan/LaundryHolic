@@ -1,0 +1,73 @@
+<div class="container m-auto">
+    <div class="row first mt-2 mx-2">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-start align-items-start">
+            <span (click)="goBack()" class="d-flex align-items-center justify-content-center back-arrow">
+                <i class="fa-solid fa-angle-left"></i>
+            </span>
+            <span class="labels fw-bold fs-5 ms-4">
+                Request Statement
+            </span>
+        </div>
+    </div>
+    <form [formGroup]="requestStatementForm" (ngSubmit)="handleSubmit()" class="mt-4">
+
+    <div class="row second mt-3 mx-2">
+        <div class="col-lg-12 col-sm-12 col-md-12 d-flex flex-column">
+            <label for="timeperiod" class="mt-3">Time Period</label>
+            <select name="category" class="px-3 py-3 fs-6 mt-2" [(ngModel)]="selectedTimePeriod"
+            [class.is-invalid]="f['category'].invalid && f['category'].touched" 
+            formControlName="category" required>
+                <option class="px-3 py-3" value="" name="category">select time period</option>
+                <option class="px-3 py-3" value="1month" name="category">Last 1 Month</option>
+                <option class="px-3 py-3" value="3month" name="category">Last 3 Month</option>
+                <option class="px-3 py-3" value="6month" name="category">Last 6 Month</option>
+                <option class="px-3 py-3" value="custom" name="category">Custom Date</option>
+            </select>
+            <p *ngIf="f['category'].invalid && f['category'].touched" style=" color:red; padding-left:5px">
+                This Field  is
+                required</p>
+        </div>
+    </div>
+    
+    <div *ngIf="selectedTimePeriod === 'custom'" class="row third mt-4 mx-2">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column w-50">
+                <label for="">Start Date</label>
+                <input type="date" class="px-3 py-3 mt-2" placeholder="Enter here"
+                [class.is-invalid]="f['startdate'].invalid && f['startdate'].touched" 
+            formControlName="startdate" required>
+            <p *ngIf="f['startdate'].invalid && f['startdate'].touched" style=" color:red; padding-left:5px">
+                This Field  is
+                required</p>
+            </div>
+            <div class="d-flex flex-column w-50 ms-1">
+                <label for="">End Date</label>
+                <input type="date" class="px-3 py-3 mt-2" placeholder="Enter here"
+                [class.is-invalid]="f['enddate'].invalid && f['enddate'].touched" 
+            formControlName="enddate" required>
+            <p *ngIf="f['enddate'].invalid && f['enddate'].touched" style=" color:red; padding-left:5px">
+                This Field  is
+                required</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row fourth d-flex flex-column mt-4 mx-2">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex flex-column">
+            <label for="email">Email</label>
+            <input type="email" class="px-3 py-3 mt-2" name="" id="email" placeholder="Enter email to receive statement"
+            [class.is-invalid]="f['email'].invalid && f['email'].touched" 
+            formControlName="email" required>
+            <p *ngIf="f['email'].invalid && f['email'].touched" style=" color:red; padding-left:5px">
+                This Field  is
+                required</p>
+        </div>
+    </div>
+    <div class="row fifth mt-4 mx-2">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <button (click)="validate()" class="py-3 px-2 w-100" [disabled]="requestStatementForm.invalid">Submit</button>
+        </div>
+    </div>
+    </form>
+</div>
