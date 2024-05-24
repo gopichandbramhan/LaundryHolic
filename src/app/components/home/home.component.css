@@ -541,3 +541,6 @@
     width: 60px;
   }
 }
+h1.fw-bold.fontstyle.anim {
+  color: red;
+}
