@@ -14,6 +14,8 @@ export class CustSchedulePickupComponent {
   showchoosevendorbutton = false;
   showvendorlist: boolean = false;
   showModal: boolean = false;
+  hideCouponCode: boolean = true;
+  couponCodeShow: boolean = false;
   activeButton: number | null = null;
   setActiveButton(index: number): void {
     this.activeButton = index;
@@ -32,14 +34,7 @@ export class CustSchedulePickupComponent {
   goBack() {
     this.router.navigate(['/customer/addtocart']);
   }
-  openModal() {
-    this.showModal = true;
-  }
-
-  closeModal() {
-    this.showModal = false;
-  }
-
+  
   showActivePopUp() {
     Swal.fire({
       title: "",
@@ -151,8 +146,6 @@ selectCard(index: number): void {
     return this.scheduleForm.controls;
   }
 
-
-  // hide show of two containers
   showSchedulePickup: boolean = false;
   hideSchedulePickup: boolean = true;
 
@@ -161,8 +154,6 @@ selectCard(index: number): void {
     {id:'2', planname:"Gold Plan", price:"₹2000/month"},
     {id:'3', planname:"Premium Plan", price:"₹3000/month"},
   ]
-  showSelectButton = true; // Controls the visibility of the Select Plan button
-  selectedPlanDetails = null; // To store the details of the selected plan
-
-
+  showSelectButton = true;
+  selectedPlanDetails = null;
 }
