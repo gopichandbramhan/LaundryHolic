@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatStepperModule } from '@angular/material/stepper';
 import { CustTrackorderComponent } from './cust-trackorder.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('CustTrackorderComponent', () => {
   let component: CustTrackorderComponent;
@@ -8,7 +9,8 @@ describe('CustTrackorderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CustTrackorderComponent]
+      declarations: [CustTrackorderComponent],
+      imports: [MatStepperModule, BrowserAnimationsModule]
     });
     fixture = TestBed.createComponent(CustTrackorderComponent);
     component = fixture.componentInstance;

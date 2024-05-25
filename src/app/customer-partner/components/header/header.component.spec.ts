@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -8,7 +8,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent]
+      declarations: [HeaderComponent],
+      imports: [RouterModule.forRoot([])]
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
@@ -16,6 +17,8 @@ describe('HeaderComponent', () => {
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(HeaderComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });

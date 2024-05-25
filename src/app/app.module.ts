@@ -24,6 +24,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
+import { AuthService } from './myservices/auth.service';
+import { DeliveryPartnerModule } from './delivery-partner/delivery-partner.module';
+import { RouterModule } from '@angular/router';
+
+
+
 
 
 
@@ -55,9 +61,11 @@ import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy
     MatSlideToggleModule,
     MatSnackBarModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DeliveryPartnerModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

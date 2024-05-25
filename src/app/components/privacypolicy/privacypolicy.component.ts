@@ -11,12 +11,9 @@ export class PrivacypolicyComponent {
   // data: any;
   constructor(private service: DataService) {
     service.fetchPrivacyPolicy().subscribe((data) => {
-
       this.users = data;
       console.log("data", data);
-      
       console.log(this.users);
-      
     });
   }
 }

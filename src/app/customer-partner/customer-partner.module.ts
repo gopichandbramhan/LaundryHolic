@@ -41,6 +41,7 @@ import { CleaningComponent } from './components/cleaning/cleaning.component';
 import { LeatherCleaningComponent } from './components/leather-cleaning/leather-cleaning.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { CustSchedulePickupComponent } from './components/cust-schedule-pickup/cust-schedule-pickup.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -90,7 +91,9 @@ import { CustSchedulePickupComponent } from './components/cust-schedule-pickup/c
     MatButtonModule,
     FormsModule,
     MatExpansionModule,
-    MatStepperModule
+    MatStepperModule,
+    RouterModule,
+    
   ],
   // providers: [],
   // bootstrap: [AppComponent]
