@@ -68,6 +68,12 @@
 .green-btn:hover {
     background-color: #00ba8f;
 }
+.quant{
+    width: 40px;
+    background: none;
+    border: none;
+    text-align: center;
+}
 
 .bgimgservices {
     padding: 19px 20px

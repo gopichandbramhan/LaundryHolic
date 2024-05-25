@@ -8,6 +8,38 @@
     --themecolor: #30d5c7;
 }
 
+/* EMPTY CART CSS */
+.empty-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.empty-cart button{
+    padding:10px 14px 10px 14px;
+    color:white;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    word-spacing: 3px;
+}
+
+
+.deleteCard{
+    background: none;
+    border: none;
+    padding: 0;
+    color: #818181;
+}
+.deleteall{
+    background: none;
+    border: none;
+
+}
+
+
+/* -------------- */
 .search-bar form {
     width: 90%;
 }

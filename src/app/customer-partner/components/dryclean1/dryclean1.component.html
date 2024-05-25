@@ -1,15 +1,15 @@
 <div class="container bgimgservices mt-4 d-flex flex-column justify-content-center align-items-center">
     <h1 class="header-services fw-bolder">Dry Cleaning</h1>
     <div class="row">
-        <ng-container *ngFor="let product of productData">
+        <ng-container *ngFor="let item of productList">
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mt-3">
                 <div class="card service-card">
-                    <img class="card-img-top dry-cleaning-img" [src]="productData[0].productimage" alt="Card image">
+                    <img class="card-img-top dry-cleaning-img" src="{{item.image}}" alt="Card image">
                     <div class="card-body justify-content-center">
-                        <h4 class="card-title text-center dry-card-text">{{product.productname}}</h4>
-                        <p class="card-text services-card-description">{{product.description}}</p>
+                        <h4 class="card-title text-center dry-card-text">{{item.title}}</h4>
+                        <p class="card-text services-card-description">{{item.description}}</p>
                         <h6 class="services-price font-italic fs-5">Price : <span>&#x20B9;</span>
-                            <span class="strike">200 </span> <span class="m-auto">&#x20B9;</span>{{product.price}}
+                            <span class="strike">200 </span> <span class="m-auto">&#x20B9;</span>{{item.price}}
                         </h6>
                         <div class="row">
                             <div class="col-md-6">
@@ -21,21 +21,20 @@
                                     <i class="bi bi-star-fill text-warning"></i>
                                 </p>
                             </div>
-                            <div class="col-md-6 text-right">
-                                <button type="button" class="btn-btn card-text card-icon"><i class="fa fa-plus"
-                                        (click)="plus()"></i></button>
-                                <span class="service-quantity card-text">{{quantity}}</span>
-                                <button type="button" class="btn-btn card-text card-icon" (click)=" minus()"><i
+                            <div class="col-md-6 text-right d-flex">
+                                <button (click)="plus(item.id)" type="button" class="btn-btn card-text card-icon"><i
+                                        class="fa fa-plus"></i></button>
+                                <input [value]="quantities[item.id] || 0" class="quant py-0 px-1">
+                                <button (click)="minus(item.id)" type="button" class="btn-btn card-text card-icon"><i
                                         class="fa fa-minus"></i></button>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-2">
                             <div class="col-lg-6 col-md-6 col-6"><a
                                     class="btn form-control font-weight-bolder btn-buy-now green-btn"
                                     routerLink="/customer/buynow"><i class="fas fa-shopping-cart"></i> Buy Now</a></div>
                             <div class="col-lg-6 col-md-6 col-6">
-                                <a (click)="addToCart(product)"
-                                    class="btn form-control font-weight-bolder btn-buy-now red-btn">
+                                <a class="btn form-control font-weight-bolder btn-buy-now red-btn" (click)="addToCart(item)">
                                     <i class="fas fa-cart-plus"></i> Add to Cart
                                 </a>
                             </div>
@@ -46,3 +45,19 @@
         </ng-container>
     </div>
 </div>
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of productList">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.title}}</h5>
+                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ₹{{item.price}}</p>
+                <button class="btn btn-primary"> Add to cart</button>
+            </div>
+        </ng-container>
+    </div>
+</div> -->

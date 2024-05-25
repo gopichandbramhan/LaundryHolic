@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { AddcartService } from '../../addcart.service';
+import { AddProductToCartService } from '../../customer-services/add-product-to-cart.service';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +7,12 @@ import { AddcartService } from '../../addcart.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
- itemCount = 0;
-  private itemCountSubscription: Subscription;
+  public totalItem : number = 0;
+ constructor(private addtocart: AddProductToCartService) {}
 
-  constructor(private addcartService: AddcartService) {
-    this.itemCountSubscription = this.addcartService.itemCount$.subscribe(count => {
-      this.itemCount = count;
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.itemCountSubscription.unsubscribe();
-  }
+ ngOnInit(): void {
+  this.addtocart.getProducts().subscribe( res => {
+    this.totalItem = res.length;
+  })
+ }
 }
