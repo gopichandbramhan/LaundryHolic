@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cust-myorder',
   templateUrl: './cust-myorder.component.html',
   styleUrls: ['./cust-myorder.component.css']
 })
+
 export class CustMyorderComponent {
   showModal: boolean = false;
   showOrderDetail : boolean = true;

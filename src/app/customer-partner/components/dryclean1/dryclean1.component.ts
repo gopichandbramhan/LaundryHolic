@@ -23,7 +23,6 @@ export class Dryclean1Component implements OnInit{
     })
   }
 
-
   quantities: { [key: number]: number } = {};
 
   plus(id: number) {

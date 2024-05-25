@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WithdrawalRequestComponent } from './withdrawal-request.component';
+import { FormsModule } from '@angular/forms';
 
 describe('WithdrawalRequestComponent', () => {
   let component: WithdrawalRequestComponent;
@@ -8,7 +9,10 @@ describe('WithdrawalRequestComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WithdrawalRequestComponent]
+      declarations: [WithdrawalRequestComponent],
+      imports: [
+        FormsModule
+      ]
     });
     fixture = TestBed.createComponent(WithdrawalRequestComponent);
     component = fixture.componentInstance;

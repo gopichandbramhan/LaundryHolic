@@ -27,10 +27,7 @@ import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy
 import { AuthService } from './myservices/auth.service';
 import { DeliveryPartnerModule } from './delivery-partner/delivery-partner.module';
 import { RouterModule } from '@angular/router';
-
-
-
-
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -63,7 +60,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     DeliveryPartnerModule,
-    RouterModule
+    RouterModule,
+    MatExpansionModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

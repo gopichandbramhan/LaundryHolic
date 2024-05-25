@@ -18,24 +18,24 @@
     height: 35px;
     width: 35px;
     color: #30d5c7;
-    border: 1px solid white;
+    border: 1px solid rgb(156, 156, 156);
     padding: 10px 10px;
     border-radius: 100%;
 }
-
+.first i:hover {
+    color:#30d5c7;
+    border: 1.5px solid #009675;
+}
 .first span,
 .first a {
     text-decoration: none;
     color: rgb(63, 55, 55);
 }
 
-.first i:hover {
-    color:#30d5c7;
-    border: 1px solid rgb(156, 156, 156);
-}
 
-.second , .first{
-    background: rgba(0, 0, 0, 0.1);
+
+.first{
+    background-color: rgb(236, 255, 253);
     border-radius: 10px;
     color: black;
 }
@@ -43,9 +43,11 @@
 .second input,
 .second textarea {
     width: 100%;
-    border: 1px solid #30d5c7;
+    border: 2px solid #30d5c7;
     margin: 10px 0px;
     border-radius: 5px;
+    outline: #009675;
+    background-color: rgb(250, 253, 255);
 }
 
 .contact-submit-btn {

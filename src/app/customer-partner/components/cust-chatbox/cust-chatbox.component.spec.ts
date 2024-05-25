@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CustChatboxComponent } from './cust-chatbox.component';
+import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 
 describe('CustChatboxComponent', () => {
   let component: CustChatboxComponent;
@@ -8,7 +9,10 @@ describe('CustChatboxComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CustChatboxComponent]
+      declarations: [CustChatboxComponent],
+      imports: [
+        FormsModule
+      ]
     });
     fixture = TestBed.createComponent(CustChatboxComponent);
     component = fixture.componentInstance;

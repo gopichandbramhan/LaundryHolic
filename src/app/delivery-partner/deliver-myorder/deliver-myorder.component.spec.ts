@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DeliverMyorderComponent } from './deliver-myorder.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 describe('DeliverMyorderComponent', () => {
   let component: DeliverMyorderComponent;
@@ -8,7 +10,11 @@ describe('DeliverMyorderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DeliverMyorderComponent]
+      declarations: [DeliverMyorderComponent],
+      imports: [
+        MatExpansionModule,
+        NoopAnimationsModule
+      ]
     });
     fixture = TestBed.createComponent(DeliverMyorderComponent);
     component = fixture.componentInstance;

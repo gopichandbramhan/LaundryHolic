@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PrivacypolicyComponent } from './privacypolicy.component';
+import { DataService } from 'src/app/customer-partner/data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PrivacypolicyComponent', () => {
   let component: PrivacypolicyComponent;
@@ -8,7 +10,8 @@ describe('PrivacypolicyComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PrivacypolicyComponent]
+      declarations: [PrivacypolicyComponent],
+      imports:[HttpClientModule],
     });
     fixture = TestBed.createComponent(PrivacypolicyComponent);
     component = fixture.componentInstance;

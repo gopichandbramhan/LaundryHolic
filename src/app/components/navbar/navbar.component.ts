@@ -9,8 +9,6 @@ export class NavbarComponent {
 public totalItem:number=0;
 
   constructor(){}
-
-
   ngOnInit():void{
     
   }

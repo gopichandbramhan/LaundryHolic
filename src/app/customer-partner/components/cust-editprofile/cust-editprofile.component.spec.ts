@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CustEditprofileComponent } from './cust-editprofile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('CustEditprofileComponent', () => {
   let component: CustEditprofileComponent;
@@ -8,7 +9,10 @@ describe('CustEditprofileComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CustEditprofileComponent]
+      declarations: [CustEditprofileComponent],
+      imports: [
+        ReactiveFormsModule
+      ]
     });
     fixture = TestBed.createComponent(CustEditprofileComponent);
     component = fixture.componentInstance;

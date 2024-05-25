@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DeliverEditProfileComponent } from './deliver-edit-profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('DeliverEditProfileComponent', () => {
   let component: DeliverEditProfileComponent;
@@ -8,7 +9,10 @@ describe('DeliverEditProfileComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DeliverEditProfileComponent]
+      declarations: [DeliverEditProfileComponent],
+      imports: [
+        ReactiveFormsModule
+      ]
     });
     fixture = TestBed.createComponent(DeliverEditProfileComponent);
     component = fixture.componentInstance;

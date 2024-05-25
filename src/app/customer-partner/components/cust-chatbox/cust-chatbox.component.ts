@@ -1,5 +1,6 @@
-import { Location } from '@angular/common';
+
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cust-chatbox',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./cust-chatbox.component.css']
 })
 export class CustChatboxComponent {
-  constructor(private location: Location){}
+  constructor(private router: Router){}
   messages: { text: string, from: string }[] = [];
   newMessage: string = '';
 
@@ -47,11 +48,10 @@ export class CustChatboxComponent {
     const file: File = event.target.files[0];
     if (file) {
       console.log('File selected:', file.name);
-      // You can process the file here (e.g., upload to a server, read file contents, etc.)
     }
   }
 
   goBack(){
-    this.location.back();
+    this.router.navigate(['/customer/myaccount/cust_support']);
   }
 }

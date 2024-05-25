@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { BussinessPartnerRoutingModule } from './bussiness-partner-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
@@ -52,7 +51,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     FormsModule,
     BrowserAnimationsModule
-    
   ]
 })
-export class BussinessPartnerModule { }
+export class BussinessPartnerModule {}

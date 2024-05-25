@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeliveryPartnerRoutingModule } from './delivery-partner-routing.module';
 import { MainComponent } from './main/main.component';
-import { DeliverHeaderComponent } from './deliver-header/deliver-header.component';
 import { DeliverMyorderComponent } from './deliver-myorder/deliver-myorder.component';
 import { DeliverNeworderComponent } from './deliver-neworder/deliver-neworder.component';
 import { DeliverAccountsComponent } from './deliver-accounts/deliver-accounts.component';
@@ -13,6 +12,7 @@ import { DeliverShareLaundrholicAppComponent } from './deliver-share-laundrholic
 import { DeliverContactusComponent } from './deliver-contactus/deliver-contactus.component';
 import { DeliverEditProfileComponent } from './deliver-edit-profile/deliver-edit-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DeliverHeaderComponent } from './deliver-header/deliver-header.component';
 
 
 
