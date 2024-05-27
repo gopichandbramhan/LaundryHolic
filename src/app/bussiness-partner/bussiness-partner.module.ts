@@ -21,7 +21,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ViewMonthlyAnalysisComponent } from './view-monthly-analysis/view-monthly-analysis.component';
 import { WithdrawalRequestComponent } from './withdrawal-request/withdrawal-request.component';
 import { DrycleanComponent } from './dryclean/dryclean.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -50,7 +49,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDialogModule,
     MatButtonModule,
     FormsModule,
-    BrowserAnimationsModule
   ]
 })
 export class BussinessPartnerModule {}

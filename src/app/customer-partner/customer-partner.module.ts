@@ -42,7 +42,6 @@ import { LeatherCleaningComponent } from './components/leather-cleaning/leather-
 import { MatStepperModule } from '@angular/material/stepper';
 import { CustSchedulePickupComponent } from './components/cust-schedule-pickup/cust-schedule-pickup.component';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -93,8 +92,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     MatExpansionModule,
     MatStepperModule,
-    RouterModule,
-    BrowserAnimationsModule
+    RouterModule
   ],
   // providers: [],
   // bootstrap: [AppComponent]

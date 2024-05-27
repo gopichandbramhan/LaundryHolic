@@ -11,8 +11,7 @@ describe('CustSchedulePickupComponent', () => {
     TestBed.configureTestingModule({
       declarations: [CustSchedulePickupComponent],
       imports: [
-        ReactiveFormsModule,
-        FormsModule
+        ReactiveFormsModule
       ]
     });
     fixture = TestBed.createComponent(CustSchedulePickupComponent);
