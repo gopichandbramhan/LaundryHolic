@@ -14,11 +14,10 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SwipersliderComponent } from './components/swiperslider/swiperslider.component';
 import { FooterComponent } from './components/footer/footer.component';
-// import { IonicModule } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './components/cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MainComponent } from './components/main/main.component';
+import { ModuleHeaderComponent } from './components/module-header/module-header.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -28,8 +27,8 @@ import { AuthService } from './myservices/auth.service';
 import { DeliveryPartnerModule } from './delivery-partner/delivery-partner.module';
 import { RouterModule } from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
-
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MainComponent } from './components/main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +47,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     FooterComponent,
     CartComponent,
     MainComponent,
+    ModuleHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,8 +62,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
     DeliveryPartnerModule,
     RouterModule,
     MatExpansionModule,
+   
   ],
   providers: [AuthService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

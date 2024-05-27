@@ -13,6 +13,7 @@ import { DeliverContactusComponent } from './deliver-contactus/deliver-contactus
 import { DeliverEditProfileComponent } from './deliver-edit-profile/deliver-edit-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeliverHeaderComponent } from './deliver-header/deliver-header.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -29,12 +30,14 @@ import { DeliverHeaderComponent } from './deliver-header/deliver-header.componen
     DeliverShareLaundrholicAppComponent,
     DeliverContactusComponent,
     DeliverEditProfileComponent,
+  
   ],
   imports: [
     CommonModule,
     DeliveryPartnerRoutingModule,
     MatExpansionModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
   ]
 })
 export class DeliveryPartnerModule { }

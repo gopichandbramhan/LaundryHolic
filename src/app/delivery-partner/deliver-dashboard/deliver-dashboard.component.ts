@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import Swal from 'sweetalert2';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-deliver-dashboard',
   templateUrl: './deliver-dashboard.component.html',

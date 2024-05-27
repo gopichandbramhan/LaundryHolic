@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,17 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./cust-schedule-pickup.component.css']
 })
 export class CustSchedulePickupComponent {
-
   showchoosevendorbutton = false;
   showvendorlist: boolean = false;
   showModal: boolean = false;
   hideCouponCode: boolean = true;
   couponCodeShow: boolean = false;
   activeButton: number | null = null;
-  setActiveButton(index: number): void {
-    this.activeButton = index;
-  }
-
+  
+  scheduleForm: FormGroup;
   constructor(private fb: FormBuilder, private router: Router) {
     this.scheduleForm = this.fb.group({
       deliveryMode: ['', Validators.required],
@@ -53,7 +49,6 @@ export class CustSchedulePickupComponent {
     })
   }
 
-  // display current month
   currentDate: string;
   months: string[] = [];
 
@@ -62,6 +57,10 @@ export class CustSchedulePickupComponent {
     const monthOptions: Intl.DateTimeFormatOptions = { month: 'long' };
     this.currentDate = new Intl.DateTimeFormat('en-US', monthOptions).format(now);
     this.generateMonths();
+    // Other form controls
+    this.scheduleForm = this.fb.group({
+      deliveryMode: ['', Validators.required],
+    });
   }
 
   generateMonths(): void {
@@ -69,25 +68,26 @@ export class CustSchedulePickupComponent {
     const currentMonthIndex = new Date().getMonth(); 
     this.months = [];
     for (let i = currentMonthIndex + 1; i < currentMonthIndex + 1 + 11; i++) {
-      this.months.push(monthNames[i % 12]); 
-    }
-  }
+      this.months.push(monthNames[i % 12]); 
+    }
+  }
 
-cards = [
-  {img: '/assets/Images/shop.png', storename: "akshay store", address:"21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024"},
-  {img: '/assets/Images/shop.png', storename: "sakshi store", address:"21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024"},
-  {img: '/assets/Images/shop.png', storename: "kanchan store", address:"21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024"},
-  {img: '/assets/Images/shop.png', storename: "suraj store", address:"21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024"}
-]
-selectedIndex: number | null = null;
+  cards = [
+    {img: '/assets/Images/shop.png', storename: "akshay store", address:"21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024"},
+    {img: '/assets/Images/shop.png', storename: "sakshi store", address:"21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024"},
+    {img: '/assets/Images/shop.png', storename: "kanchan store", address:"21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024"},
+    {img: '/assets/Images/shop.png', storename: "suraj store", address:"21/A, Ladikar layout, Ambika nagar, Ayodhya nagar, Manewada road, Nagpur 440024"}
+  ];
 
-selectCard(index: number): void {
-  this.selectedIndex = index;
-  }
+  selectedIndex: number | null = null;
 
-  //delivery methods start
+  selectCard(index: number): void {
+    this.selectedIndex = index;
+  }
+
   showNormalImage: boolean = true;
   showExpressImage: boolean = true;
+
   handleNormalDeliveryClick(event: MouseEvent): void {
     const normalButtons = document.querySelectorAll('.delivery-mode1, .activenormal');
     normalButtons.forEach(button => {
@@ -118,10 +118,8 @@ selectCard(index: number): void {
     this.showExpressImage = false;
     this.showNormalImage = true;
   }
-  //delivery methods end
 
-  //Validation
-  scheduleForm: FormGroup;
+  
   selectedTimeSlot: string | null = null;
   
   selectTimeSlot(slot: string): void {
@@ -136,6 +134,7 @@ selectCard(index: number): void {
   isInvalid(): boolean {
     const timeSlotControl = this.scheduleForm.get('timeSlot');
     return timeSlotControl != null && timeSlotControl.invalid && timeSlotControl.touched;
+    
   }
 
   handleSubmit(): void {
@@ -153,7 +152,8 @@ selectCard(index: number): void {
     {id:'1', planname:"Basic Plan", price:"₹1000/month"},
     {id:'2', planname:"Gold Plan", price:"₹2000/month"},
     {id:'3', planname:"Premium Plan", price:"₹3000/month"},
-  ]
+  ];
+
   showSelectButton = true;
   selectedPlanDetails = null;
 }
