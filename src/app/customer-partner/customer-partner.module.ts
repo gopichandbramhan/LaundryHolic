@@ -93,6 +93,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatExpansionModule,
     MatStepperModule,
     RouterModule,
+    HttpClientModule
   ],
   // providers: [],
   // bootstrap: [AppComponent]

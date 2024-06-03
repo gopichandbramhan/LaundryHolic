@@ -22,7 +22,7 @@
                     class="text-decoration-none d-flex flex-column justify-content-center align-items-center delivery-mode1 mt-1 p-3"
                     (click)=" showActivePopUp()" (click)="handleNormalDeliveryClick($event)"
                     [class.is-invalid]="f['deliveryMode'].invalid && f['deliveryMode'].touched" placeholder="Full Name"
-                    formControlName="deliveryMode"[(ngModel)]="deliveryMode" >
+                    formControlName="deliveryMode" >
                     <span>
                         <img src="/assets/Images/normaldelivery.png" alt="delivery" class="normal">
                     </span>
@@ -36,7 +36,7 @@
                     class="text-decoration-none d-flex flex-column justify-content-center align-items-center delivery-mode2 mt-1 p-3"
                     (click)="showNormalPopUp()" (click)="handleExpressDeliveryClick($event)"
                     [class.is-invalid]="f['deliveryMode'].invalid && f['deliveryMode'].touched" placeholder="Full Name"
-                    formControlName="deliveryMode" [(ngModel)]="deliveryMode">
+                    formControlName="deliveryMode" >
                     <span>
                         <img src="/assets/Images/expressdelivery.png" alt="delivery" class="express">
                     </span>

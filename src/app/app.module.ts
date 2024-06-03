@@ -47,7 +47,7 @@ import { MainComponent } from './components/main/main.component';
     FooterComponent,
     CartComponent,
     MainComponent,
-    ModuleHeaderComponent,
+    
   ],
   imports: [
     BrowserModule,

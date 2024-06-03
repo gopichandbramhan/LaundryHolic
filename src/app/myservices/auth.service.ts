@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   login(loginObj:any){
-    return this.http.post<any>('${this.baseUrl}login_api.php',loginObj);
+    return this.http.post<any>(`${this.baseUrl}login_api.php`,loginObj);
   }
 
   // getStates(){
