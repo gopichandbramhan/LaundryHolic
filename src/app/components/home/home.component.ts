@@ -52,16 +52,15 @@ export class HomeComponent {
     });
   }
 
-  signUpForm = new FormGroup({
+  homeForm = new FormGroup({
     fullname : new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
     number :  new FormControl('', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
-    text :  new FormControl('', [Validators.required]),
+    address :  new FormControl('', [Validators.required]),
    })
     handleSubmit(){
-      console.log(this.signUpForm.value)
+      console.log(this.homeForm.value)
     }
     get f(){
-      return this.signUpForm.controls;
+      return this.homeForm.controls;
     }
 }

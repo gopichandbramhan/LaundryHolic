@@ -4,31 +4,48 @@ img.img-responsive.image-style-logo {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.navbar{
+    box-shadow: 2px 2px 5px rgb(223, 223, 223);
+}
 ul.navbar-nav.ms-auto.nav-style-all {
     font-size: 17px;
     font-weight: bold;
     color: #4e5659;
 }
+
 .hove-list-all:hover {
-    color:#08493b;
-  }
-  .btn .badge {
+    color: #08493b;
+}
+
+.btn .badge {
     top: -12px !important;
 }
-  @media screen and (max-width:749px){
+
+@media screen and (max-width:749px) {
     li.nav-item.hove-list-all {
         padding-left: 11px;
         border-bottom: 1px solid #e7e7e7;
         font-size: 14px;
     }
 }
-@media (min-width: 576px) and (max-width: 768px){
+
+@media (min-width: 576px) and (max-width: 768px) {
     .navbar-expand-sm .navbar-nav .nav-link {
         padding-right: var(--bs-navbar-nav-link-padding-x);
         padding-left: var(--bs-navbar-nav-link-padding-x);
         font-size: 14px;
     }
-    .navbar-brand{
+
+    .navbar-brand {
         width: 190px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    img.img-responsive.image-style-logo{
+        width: 234px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }

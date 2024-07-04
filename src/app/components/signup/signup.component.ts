@@ -16,7 +16,6 @@ export class SignupComponent {
 
   constructor(private authService: AuthService, private router:Router){}
 
-  
   toggleDiv(divNumber: number) {
     this.showDiv1 = divNumber === 1;
     this.showDiv2 = divNumber === 2;
@@ -31,7 +30,6 @@ export class SignupComponent {
     state: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
    });
-   
  }
  get f(){
   return this.signUpForm.controls;
@@ -51,8 +49,6 @@ onSignup(){
       })
     })
     console.log(this.signUpForm.value)
-  }else{
-    // validateForm.validateAll
   }
 }
 

@@ -1,69 +1,252 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-      <div class="home-img-banner">
-        <div class="banner-content1">
-          <h1 class="fw-bold fontstyle anim">
-            Find Your Best Laundry Services</h1>
-          <button class="py-2 mt-3 anim" (click)="goToServicePage()">Order Now</button>
-          <h5 class="text-light fw-bolder mt-4 anim text-uppercase ">Laundryholic</h5>
-          <h6 class="text-light fw-bolder mt-1 anim fw-bold">" Best laundry service provider in India "</h6>
-          <h3 class="anim fw-bold mt-3 text-warning">Repairing, Dyeing, Alteration, Cleaning, etc</h3>
+<div class="container-fluid home-banner">
+  <div class="container m-auto">
+    <h1 class="d-flex flex-column text-center pt-lg-4 pt-md-4 pt-sm-3">
+      <span class="font-weight-light">Looking for the</span>
+      <span class="font-weight-light">"BEST LAUNDRY SERVICES IN INDIA ?"</span>
+      <span>WELCOME TO LAUNDRYHOLIC</span>
+      <p class="heading-p">" Loving your clothes like you "</p>
+    </h1>
+    <div class="row home-content-form m-auto">
+      <div class="col-lg-6 col-md-6 col-sm-12 align-content-center banner-content">
+        <h5 class="d-flex flex-column justify-content-center text-left">
+          <span>Trusted By 1000+ Customers</span>
+          <span>100+ Stores Accross 50+ Cities</span>
+          <span>upto 25% OFF on 1st Order</span>
+        </h5>
+        <div class="row m-auto forms">
+          <form [formGroup]="homeForm" (ngSubmit)="handleSubmit()"
+            class="mt-4 d-flex flex-column justify-content-start align-items-start">
+            <input type="text" [class.is-invalid]="f['fullname'].invalid && f['fullname'].touched"
+              placeholder="Full Name" formControlName="fullname" required>
+            <p *ngIf="f['fullname'].invalid && f['fullname'].touched" style=" color:red; padding-left:5px">
+              Full name is required</p>
+
+            <input [class.is-invalid]="f['number'].invalid && f['number'].touched" placeholder="Mobile Number"
+              formControlName="number" required>
+            <p *ngIf="f['number'].invalid && f['number'].touched" style=" color:red; padding-left:5px">Mobile
+              number is required</p>
+
+            <input [class.is-invalid]="f['address'].invalid && f['address'].touched" placeholder="Enter your address"
+              formControlName="address" required>
+            <p *ngIf="f['address'].invalid && f['address'].touched" style=" color:red; padding-left:5px">Address is
+              required</p>
+
+            <div class=" d-flex justify-content-center align-items-center mt-2">
+              <button type="button" [disabled]="homeForm.invalid" class="schedulepickup-btn m-auto">Schedule Free
+                Pickup</button>
+            </div>
+          </form>
         </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 align-content-center text-center pb-4">
+        <img src="/assets/Images/home-banner.png" class="banner-img">
       </div>
     </div>
   </div>
 </div>
-<div class="container-fluid Services mb-5">
-  <div class="d-flex flex-column">
-    <h1 class="fw-bold fontstyles mb-2 text-center">Our Services</h1>
-    <div class="card-container">
-      <div class="row d-flex justify-content-evenly align-items-center">
-        <div class="col-lg-3 col-md-6 col-sm-6 card-block">
-          <div class="card">
-            <img src="/assets/Images/dry cleaning.png" class="card-img-top px-3 py-2" alt="...">
-            <div class="card-body d-flex flex-column justify-content-evenly align-items-center">
-              <h5 class="card-title">Dry Cleaning</h5>
-              <div class="arrow" (click)="goToServicePage()">
-                Schedule Now
-                <i class="fa fa-long-arrow-right py-3" aria-hidden="true"></i>
-              </div>
+<div class="container m-auto best-drycleaners">
+  <h2 class="text-center">BEST DRY CLEANERS IN INDIA, WITH AFFORDABLE PRICES</h2>
+  <hr class="hr-content" />
+  <div class="row mt-lg-5 mt-md-2 d-flex justify-content-between align-items-center">
+    <div class="col-lg-5 col-md-5 col-sm-12 d-flex justify-content-center align-items-center mx-2">
+      <img src="/assets/Images/newLoundry.jpg" class="best-laundry-india">
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-12 best-drycleancontent">
+      <div class="d-flex flex-column justify-content-evenly align-items-start">
+        <h5 class="my-lg-4 my-md-3 my-sm-2">
+          <span class="me-4"><i class="fa-solid fa-tags"></i></span>
+          <span>Get Free Delivery on the order of ₹299</span>
+        </h5>
+        <h5 class="my-lg-4 my-md-3 my-sm-2">
+          <span class="me-4"><i class="fa-solid fa-truck-fast"></i></span>
+          <span>Get upto 20% off on your first Express Delivery</span>
+        </h5>
+        <p>We are India's Biggest Laundry Services prviders, providing all the laundry services to your doorsteps,
+          trusted by 1000+ customers throughout India</p>
+        <button type="button" class="schedulepickup-btn mt-lg-5 mt-md-3 mt-sm-0 fs-6" routerLink="/login">Schedule free pickup</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="  container container-impeccable  ">
+  <h1 class="text-center">IMPECCABLE DRY CLEAN QUALITY, EVERY TIME</h1>
+  <hr class="hr-content" />
+  <div class="row mb-5">
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+      <img
+        src="https://th.bing.com/th/id/R.a4847d9d69f0258fc33aabc1e345bfd1?rik=Wjufo1kWzlt2WQ&riu=http%3a%2f%2fkatramarketing.com%2fimages%2freason-3.jpg&ehk=26LZ2aDUpwwMlpQhbwXu%2bjjEnu6SAgiZKEagK3H4%2bds%3d&risl=&pid=ImgRaw&r=0">
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 m-auto">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row"><i class="fa-solid fa-tag "></i></th>
+            <td>100% Garment Care Label Adherence</td>
+            <td><i class="fa-solid fa-circle-check correct"></i></td>
+            <td><i class="fa-solid fa-circle-xmark  wrong"></i></td>
+          </tr>
+          <tr>
+            <th scope="row"><i class="fas fa-shield-alt"></i></th>
+            <td>Color Bleeding Proof Process</td>
+            <td><i class="fa-solid fa-circle-check  correct"></i></td>
+            <td><i class="fa-solid fa-circle-xmark  wrong "></i></td>
+          </tr>
+          <tr>
+            <th scope="row"> <i class="fas fa-lock"></i></th>
+            <td>Zero Shrinkage Guaranteed </td>
+            <td><i class="fa-solid fa-circle-check  correct"></i></td>
+            <td><i class="fa-solid fa-circle-xmark  wrong"></i></td>
+          </tr>
+          <tr>
+            <th scope="row"> <i class="fas fa-tshirt"></i></th>
+            <td>99% Stain Removal Promise</td>
+            <td><i class="fa-solid fa-circle-check  correct"></i></td>
+            <td><i class="fa-solid fa-circle-xmark  wrong"></i></td>
+          </tr>
+          <tr>
+            <th scope="row"> <i class="fas fa-spinner fa-spin"></i></th>
+            <td>Color Restoration For Old Dark Garments</td>
+            <td><i class="fa-solid fa-circle-check  correct"></i></td>
+            <td><i class="fa-solid fa-circle-xmark  wrong"></i></td>
+          </tr>
+          <tr>
+            <th scope="row"> <i class="fas fa-tshirt"></i></th>
+            <td>Whitex Technology For 3 Shades Brighter Whites</td>
+            <td><i class="fa-solid fa-circle-check  correct"></i></td>
+            <td><i class="fa-solid fa-circle-xmark  wrong"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <ul class="px-3">
+    <p>Our Lagoon technology is the world’s only
+      eco-friendly and Woolmark certified dry cleaning process. It ensures:</p>
+    <li>Zero cloth shrinkage</li>
+    <li>100% preservation of cloth shine and texture</li>
+    <li>Zero harm to environment, unlike toxic oil based
+      solvents used by other dry cleaners in Nagpur</li>
+  </ul>
+  <p class="px-3">Tumbledry is the only dry clean brand to have developed chemicals for India
+    specific stains like heena (mehendi), Indian turmeric, spices, ball pen ink, and very old stains. This allows us
+    to achieve upto 99% stain removal.
+    Other dry cleaners can achieve only upto 80% stain removal.
+  </p>
+  <div class="shedule-btn text-center mt-3 mb-3">
+    <button class="text-center" routerLink="/login">Shedule Free PickUp</button>
+  </div>
+</div>
+<div class="container review-container m-auto">
+  <h1 class="text-center">REVIEWS FROM OUR HAPPY CUSTOMERS</h1>
+  <hr class="hr-content" />
+  <div class="container-fluid mt-2">
+    <div class="slider-wrapper container">
+      <div class="slider-container d-flex justify-content-evenly align-items-center">
+        <div class="icon-container ">
+          <div class="icon-inner-container home-main-card  ">
+            <div class="slider-card ">
+              <p class=""> <i class="fas fa-quote-left icon"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem.adipisicing elit.
+                Expedita, exercitationem.
+                <i class="fas fa-quote-right icon"></i>
+              </p>
+              <h6>Sakshi Nikhade</h6>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 card-block">
-          <div class="card">
-            <img src="/assets/Images/leather dry cleaning & repair.png" class="card-img-top px-3 py-2" alt="...">
-            <div class="card-body d-flex flex-column justify-content-evenly align-items-center">
-              <h5 class="card-title">Leather Cleaning</h5>
-              <div class="arrow" (click)="goToServicePage()">
-                Schedule Now
-                <i class="fa fa-long-arrow-right py-3" aria-hidden="true"></i>
-              </div>
+        <div class="icon-container">
+          <div class="icon-inner-container home-main-card ">
+            <div class="slider-card ">
+              <p class=""> <i class="fas fa-quote-left icon"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem.adipisicing elit.
+                Expedita, exercitationem.
+                <i class="fas fa-quote-right icon"></i>
+              </p>
+              <h6>Sakshi Nikhade</h6>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 card-block">
-          <div class="card">
-            <img src="/assets/Images/home laundry.png" class="card-img-top px-3 py-2" alt="...">
-            <div class="card-body d-flex flex-column justify-content-evenly align-items-center">
-              <h5 class="card-title">Home Cleaning</h5>
-              <div class="arrow" (click)="goToServicePage()">
-                Schedule Now
-                <i class="fa fa-long-arrow-right py-3" aria-hidden="true"></i>
-              </div>
+        <div class="icon-container">
+          <div class="icon-inner-container home-main-card ">
+            <div class="slider-card ">
+              <p class=""> <i class="fas fa-quote-left icon"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem.adipisicing elit.
+                Expedita, exercitationem.
+                <i class="fas fa-quote-right icon"></i>
+              </p>
+              <h6>Sakshi Nikhade</h6>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 card-block">
-          <div class="card">
-            <img src="/assets/Images/pet laundry.png" class="card-img-top px-3 py-2" alt="...">
-            <div class="card-body d-flex flex-column justify-content-evenly align-items-center">
-              <h5 class="card-title">Pet Laundry</h5>
-              <div class="arrow" (click)="goToServicePage()">
-                Schedule Now
-                <i class="fa fa-long-arrow-right py-3" aria-hidden="true"></i>
-              </div>
+        <div class="icon-container">
+          <div class="icon-inner-container home-main-card ">
+            <div class="slider-card ">
+              <p class=""> <i class="fas fa-quote-left icon"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem.adipisicing elit.
+                Expedita, exercitationem.
+                <i class="fas fa-quote-right icon"></i>
+              </p>
+              <h6>Sakshi Nikhade</h6>
+            </div>
+          </div>
+        </div>
+        <div class="icon-container">
+          <div class="icon-inner-container home-main-card ">
+            <div class="slider-card ">
+              <p class=""> <i class="fas fa-quote-left icon"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem.adipisicing elit.
+                Expedita, exercitationem.
+                <i class="fas fa-quote-right icon"></i>
+              </p>
+              <h6>Sakshi Nikhade</h6>
+            </div>
+          </div>
+        </div>
+        <div class="icon-container">
+          <div class="icon-inner-container home-main-card ">
+            <div class="slider-card ">
+              <p class=""> <i class="fas fa-quote-left icon"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem.adipisicing elit.
+                Expedita, exercitationem.
+                <i class="fas fa-quote-right icon"></i>
+              </p>
+              <h6>Sakshi Nikhade</h6>
+            </div>
+          </div>
+        </div>
+        <div class="icon-container">
+          <div class="icon-inner-container home-main-card ">
+            <div class="slider-card ">
+              <p class=""> <i class="fas fa-quote-left icon"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem.adipisicing elit.
+                Expedita, exercitationem.
+                <i class="fas fa-quote-right icon"></i>
+              </p>
+              <h6>Sakshi Nikhade</h6>
+            </div>
+          </div>
+        </div>
+        <div class="icon-container">
+          <div class="icon-inner-container home-main-card ">
+            <div class="slider-card ">
+              <p class=""> <i class="fas fa-quote-left icon"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem.adipisicing elit.
+                Expedita, exercitationem.
+                <i class="fas fa-quote-right icon"></i>
+              </p>
+              <h6>Sakshi Nikhade</h6>
+            </div>
+          </div>
+        </div>
+        <div class="icon-container">
+          <div class="icon-inner-container home-main-card ">
+            <div class="slider-card ">
+              <p class=""> <i class="fas fa-quote-left icon"></i>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, exercitationem.adipisicing elit.
+                Expedita, exercitationem.
+                <i class="fas fa-quote-right icon"></i>
+              </p>
+              <h6>Sakshi Nikhade</h6>
             </div>
           </div>
         </div>
@@ -71,296 +254,166 @@
     </div>
   </div>
 </div>
-<div class="container-fluid best ">
-  <h1 class="fontstyles text-center m-auto">Why we are the best?</h1>
-  <div class="row best-content my-5">
-    <div class="col-lg-3 col-md-6 col-sm-12">
-      <div class="row d-flex justify-content-between align-items-center mb-3">
-        <div class="col-lg-4 col-md-4 col-sm-3 best1">
-          <img src="/assets/Images/wash & iron.png" alt="">
+<div class="container m-auto services">
+  <h1 class="text-center p-2">OUR EXPERT DRY CLEAN SERVICES</h1>
+  <hr class="hr-content" />
+  <div class="row p-4 d-flex justify-content-between align-items-center">
+    <div class="col-lg-4 col-md-4 px-3">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE2KjDUatSKyI7rOd6CHIkNexbI4ptqL6ujA&s"
+          class="card-img-top card-image mb-3" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold card-heading-font mb-1">HAUTE COUTURE DRY CLEANING</h5>
+          <p class="card-text card-middle-info">Hohenstein certified dry cleaning process to restore the lustre of your
+            silk sarees and designer wears.</p>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-9 best2">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, perferendis!</p>
-        </div>
+        <button routerLink="/service"
+          class="text-center houte-culture-btn d-flex justify-content-between align-items-center bg-secondary-subtle p-1 mt-2"><span>More
+            About Haute Couture Dry Cleaning</span><i class="fa-solid fa-chevron-right next-icon fs-6"></i></button>
       </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="row d-flex justify-content-evenly align-items-center mb-3">
-        <div class="col-lg-4 col-md-4 col-sm-3 best1">
-          <img src="/assets/Images/blanket double.png" alt="">
+    <div class="col-lg-4 col-md-4 px-3">
+      <div class="card">
+        <img src="https://www.cleanipedia.com/images/v2/325ef93667930e7523d5fdb1fc9a84bb-1800w-1200h.jpg"
+          class="card-img-top card-image mb-3" alt="shoes" />
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold card-heading-font mb-1">SHOES, BAG CLEANING AND REPAIR</h5>
+          <p class="card-text card-middle-info">Professional cleaning, laundry, and repair of your shoes and bags to
+            make them look new again. Customized treatment as per the fabric.</p>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-9 best2">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, perferendis!</p>
-        </div>
+        <button routerLink="/service"
+          class="text-center houte-culture-btn d-flex justify-content-between align-items-center bg-secondary-subtle p-1 mt-2"><span>More
+            About Shoes, Bag Cleaning and Repair</span><i class="fa-solid fa-chevron-right next-icon fs-6"></i></button>
       </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="row d-flex justify-content-evenly align-items-center mb-3">
-        <div class="col-lg-4 col-md-4 col-sm-3 best1">
-          <img src="/assets/Images/button stiching.png" alt="">
+    <div class="col-lg-4 col-md-4 px-3">
+      <div class="card">
+        <img src="https://kellysdrycleaners.com/wp-content/uploads/KDC-Stack-of-sweaters.webp"
+          class="card-img-top card-image mb-3" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold card-heading-font mb-1">WOOLENS DRY CLEANING</h5>
+          <p class="card-text card-middle-info">With our Woolmark approved Lagoon technology, your woolen clothes will
+            retain their shape, size and fluffiness.</p>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-9 best2">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, perferendis!</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="row d-flex justify-content-evenly align-items-center mb-3">
-        <div class="col-lg-4 col-md-4 col-sm-3 best1">
-          <img src="/assets/Images/carpet.png" alt="">
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-9 best2">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, perferendis!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row best-content">
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="row d-flex justify-content-evenly align-items-center mb-3">
-        <div class="col-lg-4 col-md-4 col-sm-3 best1">
-          <img src="/assets/Images/steam iron.png" alt="">
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-9 best2">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, perferendis!</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="row d-flex justify-content-evenly align-items-center mb-3">
-        <div class="col-lg-4 col-md-4 col-sm-3 best1">
-          <img src="/assets/Images/pet laundry.png" alt="">
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-9 best2">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, perferendis!</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="row d-flex justify-content-evenly align-items-center mb-3">
-        <div class="col-lg-4 col-md-4 col-sm-3 best1">
-          <img src="/assets/Images/blazer.png" alt="">
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-9 best2">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, perferendis!</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="row d-flex justify-content-evenly align-items-center mb-3">
-        <div class="col-lg-4 col-md-4 col-sm-3 best1">
-          <img src="/assets/Images/premium laundry.png" alt="">
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-9 best2">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, perferendis!</p>
-        </div>
+        <button routerLink="/service"
+          class="text-center houte-culture-btn d-flex justify-content-between align-items-center bg-secondary-subtle p-1 mt-2"><span>More
+            About Woolens Dry Cleaning</span><i class="fa-solid fa-chevron-right next-icon fs-6"></i></button>
       </div>
     </div>
   </div>
-</div>
-<div class="container-fluid text-center best-service d-flex flex-column justify-content-center align-items-center ">
-  <div class="row py-4 bestservice">
-    <div class="col-lg-12 col-sm-12 col-md-12">
-      <h1 class="fw-bold fontstyles">India's best & trusted Laundry service provider</h1>
-      <h3 class="fw-bold mb-2">Quality cleaning in affordable price</h3>
-      <p>We offer added advantage of complementary home pickup and drop at the order of above <span>Rs.299</span>
-        at our serviceable location. Book your laundry at any time and enjoy your stress free laundry</p>
+  <div class="row p-4">
+    <div class="col-lg-4 col-md-4 px-3">
+      <div class="card">
+        <img src="https://cdn.fantasticservices.com/wp-content/uploads/2016/11/Curtain-cleaning-technician.png"
+          class="card-img-top card-image mb-3" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold card-heading-font mb-1">CURTAIN CLEANING</h5>
+          <p class="card-text card-middle-info">One stop solution for dry cleaning your silk, cotton, velvet or chenille
+            curtains. We remove and hang the curtains back after cleaning as a complimentary service.</p>
+        </div>
+        <button routerLink="/service"
+          class="text-center houte-culture-btn d-flex justify-content-between align-items-center bg-secondary-subtle p-1 mt-2"><span>More
+            About Curtain Cleaning</span> <i class="fa-solid fa-chevron-right next-icon fs-6"></i></button>
+      </div>
     </div>
-  </div>
-</div>
-<div class="container-fluid workflow">
-  <h1 class="fontstyles text-center my-3">How we work ?</h1>
-  <div class="row ">
-    <div class="col-lg-6 col-md-12 col-sm-6 m-auto workflow-container">
-      <img src="/assets/Images/Laundryworkflow.png" class="m-4" alt="workflowimg">
+    <div class="col-lg-4 col-md-4 px-3">
+      <div class="card">
+        <img
+          src="https://www.leatherneo.com/cdn/shop/articles/img-1704852097687_af040b6c-c2aa-42c3-a67c-bc3048b3d9a0.jpg?v=1704852351"
+          class="card-img-top card-image mb-3" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold card-heading-font mb-1">LEATHER DRY CLEANING AND REPAIR</h5>
+          <p class="card-text card-middle-info">Dry cleaning process using Italian creams, oils and machines for your
+            leather shoes, handbags, jackets, wallets/purses and belts. Repair services are also available.</p>
+        </div>
+        <button routerLink="/service"
+          class="text-center houte-culture-btn d-flex justify-content-between align-items-center bg-secondary-subtle p-1 mt-2"><span>More
+            About Leather Dry Cleaning</span> <i class="fa-solid fa-chevron-right next-icon fs-6"></i></button>
+      </div>
     </div>
-    <div class="col-lg-6 col-sm-12 col-md-12">
-      <div class="row d-flex justify-content-evenly align-items-center my-4">
-        <div class="col-lg-2 col-md-12 col-sm-6 count">
-          <span>1</span>
+    <div class="col-lg-4 col-md-4 px-3">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgxTy0yTl6x3cY08xqTG-xaGX4mIFLdFzsOA&s"
+          class="card-img-top card-image mb-3" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold card-heading-font mb-1">CARPET CLEANING</h5>
+          <p class="card-text card-middle-info">An intense, deep-cleaning of carpets with 100% eco-friendly detergents
+            and technologically advanced machines. Experts in Persian rugs, Silk carpets and Turkish carpets.</p>
         </div>
-        <div class="col-lg-10 col-sm-6 col-md-12 w-75">
-          <p class="fw-bold">Customer will <span class="text-success">signup</span> to the
-            Laundryholic
-            application and will be able to create order for their garments any time.
-          </p>
-        </div>
-      </div>
-      <div class="row d-flex justify-content-evenly align-items-center my-4">
-        <div class="col-lg-2 col-md-12 col-sm-6 count">
-          <span>2</span>
-        </div>
-        <div class="col-lg-10 col-sm-6 col-md-12 w-75">
-          <p class="fw-bold">On the next step, customer will <span class="text-success">select</span> a
-            laundry which best fits their budget, which gives them the best experience of laundry service.
-          </p>
-        </div>
-      </div>
-      <div class="row  d-flex justify-content-evenly align-items-center my-4">
-        <div class="col-lg-2 col-md-12 col-sm-6 count">
-          <span>3</span>
-        </div>
-        <div class="col-lg-10 col-sm-6 col-md-12 w-75">
-          <p class="fw-bold">After the order is confirmed, delivery boy will collect the clothes from the
-            <span class="text-primary">customer's location</span> and give them to the laundry store
-          </p>
-        </div>
-      </div>
-      <div class="row  d-flex justify-content-evenly align-items-center my-4">
-        <div class="col-lg-2 col-md-12 col-sm-6 count">
-          <span>4</span>
-        </div>
-        <div class="col-lg-10 col-sm-6 col-md-12 w-75">
-          <p class="fw-bold">The garments collected from the customer will undergo a thorough <span
-              class="text-primary">dry cleaning</span> process using industry leading <span
-              class="text-warning">equipments and solvents</span></p>
-        </div>
-      </div>
-      <div class="row  d-flex justify-content-evenly align-items-center my-4">
-        <div class="col-lg-2 col-md-12 col-sm-6 count">
-          <span>5</span>
-        </div>
-        <div class="col-lg-10 col-sm-6 col-md-12 w-75">
-          <p class="fw-bold">Once the garments are washed, it will be send for folding and packaging process.
-            Now the <span class="text-primary">freshly dry cleaned garments are carefully folded and
-              packed.</span></p>
-        </div>
-      </div>
-      <div class="row  d-flex justify-content-evenly align-items-center my-4">
-        <div class="col-lg-2 col-md-12 col-sm-6 count">
-          <span>6</span>
-        </div>
-        <div class="col-lg-10 col-sm-6 col-md-12 w-75">
-          <p class="fw-bold">The order after packaging will be <span class="text-success">delivered</span> to
-            the customer's location within the given period of time.</p>
-        </div>
+        <button routerLink="/service"
+          class="text-center houte-culture-btn d-flex justify-content-between align-items-center bg-secondary-subtle p-1 mt-2"><span>More
+            About Carpet Cleaning</span><i class="fa-solid fa-chevron-right next-icon fs-6"></i></button>
       </div>
     </div>
   </div>
 </div>
-<div class="container-fluid my-3 testimonials">
-  <h3 class="fontstyles text-center">Client Testimonials</h3>
-  <h6 class="text-center fw-light">Don't take our words for it - here's what our clients say</h6>
-  <div class="row mt-5">
-    <div class="col-lg-4 col-md-6 col-sm-4 d-flex justify-content-center align-items-center">
-      <div class="card-testimonial w-75 d-flex flex-column justify-content-center align-items-center">
-        <img src="/assets/Images/profilephoto.jpg" class="card-img-top mt-3 mt-3" alt="...">
-        <div class="card-body">
-          <h5 class="text-center p-2">John Doe</h5>
-          <p class="text-center"><i class="fa-solid fa-quote-right"></i></p>
-          <h6 class="text-center">
-            <i class="fa-solid fa-star text-warning"></i>
-            <i class="fa-solid fa-star text-warning"></i>
-            <i class="fa-solid fa-star text-warning"></i>
-            <i class="fa-solid fa-star-half-stroke text-warning"></i>
-            <i class="fa-regular fa-star text-warning"></i>
-          </h6>
-          <p class="card-text text-center fw-light mb-3 px-3 py-1">Some quick example text to build on the
-            card title and make up the bulk of the
-            card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-4 d-flex justify-content-center align-items-center">
-      <div class="card-testimonial w-75 d-flex flex-column justify-content-center align-items-center">
-        <img src="/assets/Images/profilephoto.jpg" class="card-img-top mt-3 mat-h3" alt="...">
-        <div class="card-body">
-          <h5 class="text-center p-2">John Doe</h5>
-          <p class="text-center"><i class="fa-solid fa-quote-right"></i></p>
-          <h6 class="text-center">
-            <i class="fa-solid fa-star text-warning"></i>
-            <i class="fa-solid fa-star text-warning"></i>
-            <i class="fa-solid fa-star text-warning"></i>
-            <i class="fa-solid fa-star-half-stroke text-warning"></i>
-            <i class="fa-regular fa-star text-warning"></i>
-          </h6>
-          <p class="card-text text-center fw-light mb-3 px-3 py-1">Some quick example text to build on the
-            card title and make up the bulk of the
-            card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-4 d-flex justify-content-center align-items-center m-auto">
-      <div class="card-testimonial w-75 d-flex flex-column justify-content-center align-items-center">
-        <img src="/assets/Images/profilephoto.jpg" class="card-img-top mt-3" alt="...">
-        <div class="card-body">
-          <h5 class="text-center p-2">John Doe</h5>
-          <p class="text-center"><i class="fa-solid fa-quote-right"></i></p>
-          <h6 class="text-center">
-            <i class="fa-solid fa-star text-warning"></i>
-            <i class="fa-solid fa-star text-warning"></i>
-            <i class="fa-solid fa-star text-warning"></i>
-            <i class="fa-solid fa-star-half-stroke text-warning"></i>
-            <i class="fa-regular fa-star text-warning"></i>
-          </h6>
-          <p class="card-text text-center fw-light mb-3 px-3 py-1">Some quick example text to build on the
-            card title and make up the bulk of the
-            card's content.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container-fluid py-2 mt-5">
-  <div class="row counter p-5">
-    <h2 class="text-center fw-bold">India's Trusted Laundry Service Provider</h2>
-    <div class="col-lg-3 col-sm-6 col-md-3 d-flex flex-column justify-content-center align-items-center">
-      <h1 class="py-3">1k+</h1>
-      <p class="text-center fw-bold p-2 fs-5">Our Customer's</p>
-    </div>
-    <div class="col-lg-3 col-sm-6 col-md-3 d-flex flex-column justify-content-center align-items-center">
-      <h1 class="py-3">1k+</h1>
-      <p class="text-center fw-bold p-2 fs-5">Our Branches</p>
-    </div>
-    <div class="col-lg-3 col-sm-6 col-md-3 d-flex flex-column justify-content-center align-items-center">
-      <h1 class="py-3">1k+</h1>
-      <p class="text-center fw-bold p-2 fs-5">Our Venders</p>
-    </div>
-    <div class="col-lg-3 col-sm-6 col-md-3 d-flex flex-column justify-content-center align-items-center">
-      <h1 class="py-3">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star-half-stroke"></i>
-        <i class="fa-regular fa-star"></i>
-      </h1>
-      <p class="text-center fw-bold p-2 fs-5">Ratings</p>
-    </div>
-  </div>
-</div>
-<div class="container-fluid feedback-container py-4">
-  <h1 class="fontstyles text-center">Send Feedback</h1>
-  <p class="text-center">We appreciate your valuable feedback</p>
+<div class="container m-auto Online-services-div my-lg-5 my-md-3">
   <div class="row m-auto">
-    <form [formGroup]="signUpForm" (ngSubmit)="handleSubmit()" class="mt-4 form">
-      <input class="px-3 py-3 my-3" type="text" [class.is-invalid]="f['fullname'].invalid && f['fullname'].touched"
-        placeholder="Full Name" formControlName="fullname" required>
-      <p *ngIf="f['fullname'].invalid && f['fullname'].touched" style=" color:red; padding-left:5px">
-        Full name is required</p>
-
-      <input class="px-3 py-3 my-3" type="email" [class.is-invalid]="f['email'].invalid && f['email'].touched"
-        placeholder=" Your Email Address" formControlName="email" required>
-      <p *ngIf="f['email'].invalid && f['email'].touched" style=" color:red; padding-left:5px">Email is
-        required</p>
-
-      <input class="px-3 py-3 my-3" [class.is-invalid]="f['number'].invalid && f['number'].touched"
-        placeholder="Mobile Number" formControlName="number" required>
-      <p *ngIf="f['number'].invalid && f['number'].touched" style=" color:red; padding-left:5px">Mobile
-        number is required</p>
-
-      <textarea class="px-3 py-3 my-3" [class.is-invalid]="f['text'].invalid && f['text'].touched"
-        placeholder="Feedback here" formControlName="text" required></textarea>
-      <p *ngIf="f['text'].invalid && f['text'].touched" style=" color:red; padding-left:5px">Feedback is
-        required
+    <div class="col-lg-6 col-md-6">
+      <h5 class="text-center mb-4">ONLINE LAUNDRY SERVICES, <br> NOW JUST A MOBILE CLICK AWAY</h5>
+      <hr>
+      <p class="m-auto my-4">
+        <span class="pe-3"><i class="fa-solid fa-clock"></i></span>
+        <span>Schedule Pickup</span>
       </p>
-
-      <div class=" d-flex justify-content-center align-items-center mt-4">
-        <button type="submit" [disabled]="signUpForm.invalid" class="contact-submit-btn px-5 py-2">Submit</button>
+      <p class="m-auto my-4">
+        <span class="pe-3"><i class="fa-solid fa-route"></i></span>
+        <span>Track Order Status</span>
+      </p>
+      <p class="m-auto my-4">
+        <span class="pe-4"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+        <span> Pay Online</span>
+      </p>
+      <hr>
+      <h6 class="text-center mt-lg-5 mt-md-3">Mobile App Available on Play Store and iOS App Store</h6>
+      <div class="d-flex justify-content-between align-items-center playstore-img m-auto mt-lg-4 mt-md-3 mt-3">
+        <a href="https://play.google.com/apps"><img src="/assets/Images/playstore.png"></a>
+        <a href="https://www.apple.com/in/store"><img src="/assets/Images/applestore.png"></a>
       </div>
-    </form>
+    </div>
+    <div class="col-lg-6 col-md-6 m-auto text-center">
+      <div class="joinus-div align-content-center">
+        <img src="/assets/Images/joinus1.png" alt="" class=" img1">
+        <img src="/assets/Images/joinus2.png" alt="" class=" img2">
+        <img src="/assets/Images/joinus3.png" alt="" class=" img3">
+      </div>
+    </div>
   </div>
 </div>
-<!-- whatsapp -->
+<div class="container van-section m-auto">
+  <h3 class="text-center fw-bold p-4">BEST DRY CLEANERS IN NAGPUR, WITH FREE HOME DELIVERY</h3>
+  <hr class="hr-content mt-0" />
+  <div>
+    <p class="text-center p-4">Tumbledry provides free home pickup and delivery at a time of your convenience. We also
+      provide express and same day delivery service.</p>
+  </div>
+  <div class="row mobile-view">
+    <div class="col-lg-6 colo-sm-6 col-md-6 pt-lg-5 pt-md-2">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 text-center">
+          <i class="fa-solid fa-van-shuttle p-2 mt-sm-2 van-icon"></i>
+          <h4 class="heading-part">NORMAL DELIVERY</h4>
+          <p class="heading-para">- Standard charges as per price list <br>
+            - 4 Day Delivery TAT</p>
+        </div>
+        <div class="col-lg-6 col-md-6 text-center">
+          <i class="fa-solid fa-truck-fast p-2 van-icon"></i>
+          <h4 class="heading-part">EXPRESS DELIVERY</h4>
+          <p class="heading-para">- Double charges <br>
+            - Same day or next day delivery</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 colo-sm-6 col-md-6">
+      <img class="van-img"
+        src="https://res.cloudinary.com/ho5waxsnl/image/upload/c_fill,f_auto,h_540,q_auto,w_960/hke7x2ovvntz9ljv3h7j68pckhit"
+        alt="van" />
+    </div>
+  </div>
+  <div class="text-center p-4">
+    <button class="schedulepickup-btn" routerLink="/login">Schedule Free Pickup</button>
+  </div>
+</div>
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-6 d-flex justify-content-end ">
     <div class="whatsapp">

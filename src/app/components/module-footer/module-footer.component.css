@@ -1,14 +1,6 @@
-.logo img {
-    width: 300px;
-}
-
 .footer-container {
     background-color: #30d5c7;
     color: rgb(0, 0, 0);
-}
-
-.logo {
-    border-bottom: 1px solid #30d5c7;
 }
 
 .footer-third p a:hover {
@@ -44,13 +36,7 @@
         height: 30px;
         font-size: medium;
     }
-    .logo li{
-        font-size: 10px;
-    }
     .footer-container{
         font-size: 10px;
-    }
-    .logo img {
-        width: 224px;
     }
 }
